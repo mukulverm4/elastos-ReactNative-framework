@@ -28,7 +28,7 @@ NSDictionary *_launchOptions;
   
   
   rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                         moduleName:@"JSCoreTest"
+                                         moduleName:@"ELASTOS_RN_FRAMEWORK"
                                   initialProperties:nil
                                       launchOptions:_launchOptions];
   
@@ -49,7 +49,7 @@ NSDictionary *_launchOptions;
   jsCodeLocation = [NSURL URLWithString: url];
 //  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"example" fallbackResource:nil];
   RCTRootView* view = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                         moduleName:@"JSCoreTest"
+                                         moduleName:@"ELASTOS_RN_FRAMEWORK"
                                   initialProperties:nil
                                       launchOptions:_launchOptions];
   

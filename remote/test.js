@@ -1635,7 +1635,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _nativeBase = _$$_REQUIRE(_dependencyMap[3], "native-base");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/test.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/test.js";
 
   global.confirm = function (title) {
     _reactNative.ActionSheetIOS.showActionSheetWithOptions({
@@ -3592,8 +3592,8 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 },10,[],"node_modules/prop-types/lib/ReactPropTypesSecret.js");
 __d(function(global, require, module, exports) {
   module.exports = {
-  "name": "JSCoreTest",
-  "displayName": "JSCoreTest"
+  "name": "ELASTOS_RN_FRAMEWORK",
+  "displayName": "ELASTOS_RN_FRAMEWORK"
 };
 },11,[],"app.json");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
@@ -6462,7 +6462,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
 
   var Platform = _$$_REQUIRE(_dependencyMap[0], 'Platform');
 
@@ -8812,7 +8812,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/View/View.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/View/View.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -9448,7 +9448,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -9493,7 +9493,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/ART/ReactNativeART.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/ART/ReactNativeART.js";
 
   var Color = _$$_REQUIRE(_dependencyMap[0], 'art/core/color');
 
@@ -11048,7 +11048,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Button.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Button.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -11198,7 +11198,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Text/Text.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Text/Text.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -11604,7 +11604,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
 
   var BoundingDimensions = _$$_REQUIRE(_dependencyMap[0], 'BoundingDimensions');
 
@@ -36213,7 +36213,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.ios.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -36288,7 +36288,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js";
 
   var Animated = _$$_REQUIRE(_dependencyMap[0], 'Animated');
 
@@ -40218,7 +40218,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js";
 
   var _require = _$$_REQUIRE(_dependencyMap[0], './AnimatedEvent'),
       AnimatedEvent = _require.AnimatedEvent;
@@ -40399,7 +40399,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Image/Image.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Image/Image.ios.js";
 
   var ImageProps = _$$_REQUIRE(_dependencyMap[0], 'ImageProps');
 
@@ -40998,7 +40998,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js";
 
   var AnimatedImplementation = _$$_REQUIRE(_dependencyMap[0], 'AnimatedImplementation');
 
@@ -41939,7 +41939,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
 
   var AnimatedImplementation = _$$_REQUIRE(_dependencyMap[0], 'AnimatedImplementation');
 
@@ -42466,7 +42466,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.ios.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -42573,7 +42573,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/FlatList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/FlatList.js";
 
   var MetroListView = _$$_REQUIRE(_dependencyMap[0], 'MetroListView');
 
@@ -42887,7 +42887,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/MetroListView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/MetroListView.js";
 
   var ListView = _$$_REQUIRE(_dependencyMap[0], 'ListView');
 
@@ -43093,7 +43093,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/ListView/ListView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/ListView/ListView.js";
 
   var InternalListViewType = _$$_REQUIRE(_dependencyMap[0], 'InternalListViewType');
 
@@ -43962,7 +43962,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js";
 
   var Platform = _$$_REQUIRE(_dependencyMap[0], 'Platform');
 
@@ -44053,7 +44053,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/VirtualizedList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/VirtualizedList.js";
 
   var Batchinator = _$$_REQUIRE(_dependencyMap[0], 'Batchinator');
 
@@ -46224,7 +46224,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Image/ImageBackground.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Image/ImageBackground.js";
 
   var Image = _$$_REQUIRE(_dependencyMap[0], 'Image');
 
@@ -46377,7 +46377,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -46431,7 +46431,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js";
 
   var Keyboard = _$$_REQUIRE(_dependencyMap[0], 'Keyboard');
 
@@ -46627,7 +46627,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = KeyboardAvoidingView;
 },250,[214,215,22,44,45,71],"node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/MaskedView/MaskedViewIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/MaskedView/MaskedViewIOS.ios.js";
 
   var PropTypes = _$$_REQUIRE(_dependencyMap[0], 'prop-types');
 
@@ -46709,7 +46709,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Modal/Modal.js",
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Modal/Modal.js",
       _container;
 
   var AppContainer = _$$_REQUIRE(_dependencyMap[0], 'AppContainer');
@@ -46898,7 +46898,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
 
   var EmitterSubscription = _$$_REQUIRE(_dependencyMap[0], 'EmitterSubscription');
 
@@ -47060,7 +47060,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/Inspector.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/Inspector.js";
 
   var Dimensions = _$$_REQUIRE(_dependencyMap[0], 'Dimensions');
 
@@ -47378,7 +47378,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
 
   var Dimensions = _$$_REQUIRE(_dependencyMap[0], 'Dimensions');
 
@@ -47480,7 +47480,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/ElementBox.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/ElementBox.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -47582,7 +47582,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/BorderBox.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/BorderBox.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -47674,7 +47674,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
 
   var ElementProperties = _$$_REQUIRE(_dependencyMap[0], 'ElementProperties');
 
@@ -47908,7 +47908,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
 
   var BoxInspector = _$$_REQUIRE(_dependencyMap[0], 'BoxInspector');
 
@@ -48111,7 +48111,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -48293,7 +48293,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -48395,7 +48395,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -48636,7 +48636,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
 
   var ListView = _$$_REQUIRE(_dependencyMap[0], 'ListView');
 
@@ -49590,7 +49590,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
 
   var PerformanceLogger = _$$_REQUIRE(_dependencyMap[0], 'PerformanceLogger');
 
@@ -49678,7 +49678,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/YellowBox.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/YellowBox.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -49857,7 +49857,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxList.js";
 
   var Dimensions = _$$_REQUIRE(_dependencyMap[0], 'Dimensions');
 
@@ -50057,7 +50057,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = YellowBoxList;
 },271,[47,44,231,272,45,71,273,276,284,275],"node_modules/react-native/Libraries/YellowBox/UI/YellowBoxList.js");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.ios.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -50096,7 +50096,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxButton.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxButton.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -50146,7 +50146,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxPressable.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxPressable.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -50241,7 +50241,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspector.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspector.js";
 
   var Platform = _$$_REQUIRE(_dependencyMap[0], 'Platform');
 
@@ -50481,7 +50481,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/Data/YellowBoxCategory.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/Data/YellowBoxCategory.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -50635,7 +50635,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorFooter.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorFooter.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -50742,7 +50742,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorHeader.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorHeader.js";
 
   var Platform = _$$_REQUIRE(_dependencyMap[0], 'Platform');
 
@@ -50874,7 +50874,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorSourceMapStatus.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorSourceMapStatus.js";
 
   var Animated = _$$_REQUIRE(_dependencyMap[0], 'Animated');
 
@@ -51070,7 +51070,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorStackFrame.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxInspectorStackFrame.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -51145,7 +51145,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxListRow.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/YellowBox/UI/YellowBoxListRow.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -51636,7 +51636,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Navigation/NavigatorIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Navigation/NavigatorIOS.ios.js";
 
   var EventEmitter = _$$_REQUIRE(_dependencyMap[0], 'EventEmitter');
 
@@ -52121,7 +52121,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Picker/Picker.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Picker/Picker.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -52233,7 +52233,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Picker/PickerIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Picker/PickerIOS.ios.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -52358,7 +52358,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.ios.js";
 
   var Image = _$$_REQUIRE(_dependencyMap[0], 'Image');
 
@@ -52410,7 +52410,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/SectionList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/SectionList.js";
 
   var MetroListView = _$$_REQUIRE(_dependencyMap[0], 'MetroListView');
 
@@ -52512,7 +52512,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -52933,7 +52933,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.ios.js";
 
   var NativeMethodsMixin = _$$_REQUIRE(_dependencyMap[0], 'NativeMethodsMixin');
 
@@ -52997,7 +52997,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Slider/Slider.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Slider/Slider.js";
 
   var ReactNative = _$$_REQUIRE(_dependencyMap[0], 'ReactNative');
 
@@ -53078,7 +53078,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/RCTTest/SnapshotViewIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/RCTTest/SnapshotViewIOS.ios.js";
 
   var React = _$$_REQUIRE(_dependencyMap[0], 'React');
 
@@ -53151,7 +53151,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/Switch/Switch.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/Switch/Switch.js";
 
   var Platform = _$$_REQUIRE(_dependencyMap[0], 'Platform');
 
@@ -53471,7 +53471,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js";
 
   var PropTypes = _$$_REQUIRE(_dependencyMap[0], 'prop-types');
 
@@ -53621,7 +53621,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableRow.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableRow.js";
 
   var Animated = _$$_REQUIRE(_dependencyMap[0], 'Animated');
 
@@ -54124,7 +54124,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js";
 
   var ListView = _$$_REQUIRE(_dependencyMap[0], 'ListView');
 
@@ -54385,7 +54385,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.ios.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -54453,7 +54453,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.ios.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -54574,7 +54574,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/TextInput/TextInput.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/TextInput/TextInput.js";
 
   var ColorPropType = _$$_REQUIRE(_dependencyMap[0], 'ColorPropType');
 
@@ -55603,7 +55603,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/Components/WebView/WebView.ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/Components/WebView/WebView.ios.js";
 
   var ActivityIndicator = _$$_REQUIRE(_dependencyMap[0], 'ActivityIndicator');
 
@@ -56412,7 +56412,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
 
   var AppContainer = _$$_REQUIRE(_dependencyMap[0], 'AppContainer');
 
@@ -71847,7 +71847,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _resolveComponentStyle = _$$_REQUIRE(_dependencyMap[7], "./resolveComponentStyle");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/native-base-shoutem-theme/src/connectStyle.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/native-base-shoutem-theme/src/connectStyle.js";
   var themeCache = {};
 
   function throwConnectStyleError(errorMessage, componentDisplayName) {
@@ -86150,7 +86150,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _computeProps = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../Utils/computeProps"));
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-easy-grid/Components/Row.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-easy-grid/Components/Row.js";
 
   var RowNB = function (_Component) {
     function RowNB() {
@@ -86286,7 +86286,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _Row = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./Row"));
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-easy-grid/Components/Grid.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-easy-grid/Components/Grid.js";
 
   var GridNB = function (_Component) {
     function GridNB() {
@@ -86378,7 +86378,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _computeProps = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../Utils/computeProps"));
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-easy-grid/Components/Col.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-easy-grid/Components/Col.js";
 
   var ColumnNB = function (_Component) {
     function ColumnNB() {
@@ -92381,7 +92381,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _tweener = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./tweener"));
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-drawer/index.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-drawer/index.js";
 
   var deviceScreen = _reactNative.Dimensions.get('window');
 
@@ -95745,7 +95745,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _toolbarAndroid = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./toolbar-android"));
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-vector-icons/lib/create-icon-set.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-vector-icons/lib/create-icon-set.js";
   var NativeIconAPI = _reactNative.NativeModules.RNVectorIconsManager || _reactNative.NativeModules.RNVectorIconsModule;
   var DEFAULT_ICON_SIZE = 12;
   var DEFAULT_ICON_COLOR = 'black';
@@ -95953,7 +95953,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[5], "./react-native");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-vector-icons/lib/icon-button.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-vector-icons/lib/icon-button.js";
 
   var styles = _reactNative.StyleSheet.create({
     container: {
@@ -97289,7 +97289,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[4], "./react-native");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js";
 
   function createTabBarItemIOSComponent(IconNamePropType, getImageSource) {
     var _class, _temp;
@@ -97987,7 +97987,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[4], "./react-native");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-vector-icons/lib/toolbar-android.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-vector-icons/lib/toolbar-android.js";
 
   function createToolbarAndroidComponent(IconNamePropType, getImageSource) {
     var _class, _temp;
@@ -112091,7 +112091,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _reactNativeIphoneXHelper = _$$_REQUIRE(_dependencyMap[3], "react-native-iphone-x-helper");
 
-  var _jsxFileName = "/Users/jacky.li/Desktop/webkit/JSCoreTest/node_modules/react-native-keyboard-aware-scroll-view/lib/KeyboardAwareHOC.js";
+  var _jsxFileName = "/Users/jacky.li/Desktop/Elastos/elastos-ReactNative-framework/node_modules/react-native-keyboard-aware-scroll-view/lib/KeyboardAwareHOC.js";
 
   var _KAM_DEFAULT_TAB_BAR_HEIGHT = (0, _reactNativeIphoneXHelper.isIphoneX)() ? 83 : 49;
 

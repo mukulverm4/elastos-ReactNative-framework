@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(){
     super();
     this.state = {
-      ip : '192.168.1.103'
+      ip : '192.168.1.15'
     };
   }
   render() {

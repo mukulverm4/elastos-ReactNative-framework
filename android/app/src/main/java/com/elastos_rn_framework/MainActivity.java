@@ -1,4 +1,4 @@
-package com.jscoretest;
+package com.elastos_rn_framework;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "JSCoreTest";
+        return "ELASTOS_RN_FRAMEWORK";
     }
 }
