@@ -8,4 +8,4 @@ services:
 
     volumes:
       - ./proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
-      - ./remote:/www
+      - ../remote:/www

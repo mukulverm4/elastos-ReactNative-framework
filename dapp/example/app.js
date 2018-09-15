@@ -1,6 +1,11 @@
+import {AppRegistry} from 'react-native';
+
 import React from "react";
 import { Root } from "native-base";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
+
+import getTheme from "./theme/components";
+import variables from "./theme/variables/commonColor";
 
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
@@ -309,7 +314,25 @@ const AppNavigator = StackNavigator(
   }
 );
 
-export default () =>
+const OP = () =>
   <Root>
     <AppNavigator />
   </Root>;
+
+const Setup = class extends Component {
+  render() {
+    return (
+      <StyleProvider style={getTheme(variables)}>
+        <OP />
+      </StyleProvider>
+    );
+  }
+}
+
+export default class App extends React.Component {
+  render() {
+    return <Setup />;
+  }
+}
+
+// AppRegistry.registerComponent('example', () => App);

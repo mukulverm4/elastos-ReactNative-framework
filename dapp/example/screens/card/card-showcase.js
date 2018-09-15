@@ -18,8 +18,8 @@ import {
 import styles from "./styles";
 
 const deviceWidth = Dimensions.get("window").width;
-const logo = require("../../../assets/logo.png");
-const cardImage = require("../../../assets/drawer-cover.png");
+const logo = require("../../../../assets/logo.png");
+const cardImage = require("../../../../assets/drawer-cover.png");
 
 class NHCardShowcase extends Component {
   render() {

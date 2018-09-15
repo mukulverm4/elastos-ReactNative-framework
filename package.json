@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build:test": "npm link && bundle --dev --platform ios --entry-file test.js --bundle-output test.js && npm unlink",
-    "build:example": "npm link && bundle --platform ios --dev --entry-file example.js --bundle-output example.js && npm unlink"
+    "build:example": "npm link && bundle --platform ios --dev --entry-file example.js --bundle-output example.js && npm unlink",
+    "dep:start": "docker-compose -f ./docker/docker-compose.yml up -d",
+    "dep:stop": "docker-compose -f ./docker/docker-compose.yml down"
   },
   "dependencies": {
     "color": "1.0.3",
