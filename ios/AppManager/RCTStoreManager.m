@@ -7,6 +7,7 @@
 //
 
 #import "RCTStoreManager.h"
+#import "Util.h"
 
 @interface RCTStoreManager () {
   NSString *  _rootPath;
@@ -18,6 +19,11 @@
 
 @implementation RCTStoreManager
 
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
+
 RCT_EXPORT_MODULE();
 
 - (id)init {
@@ -27,7 +33,7 @@ RCT_EXPORT_MODULE();
     // NSCacheDirectory is also good to use
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     _rootPath = [paths objectAtIndex:0];
-    
+
   }
   return self;
 }
@@ -37,11 +43,11 @@ RCT_EXPORT_MODULE();
 #pragma mark - storing management methods
 
 // store a data into a file in a specific sub directory
-RCT_EXPORT_METHOD(storeData:(id)content intoFile:(NSString *)filename inDirectory:(NSString *)directory callback:(RCTResponseSenderBlock)callback) {
-  
-  BOOL result = [self storeDataIntoLocalFilesystem:content intoFile:filename inDirectory:directory];
-  callback(@[@(result)]);
-}
+//RCT_EXPORT_METHOD(storeData:(id)content intoFile:(NSString *)filename inDirectory:(NSString *)directory callback:(RCTResponseSenderBlock)callback) {
+//
+//  BOOL result = [self storeDataIntoLocalFilesystem:content intoFile:filename inDirectory:directory];
+//  callback(@[@(result)]);
+//}
 
 
 
@@ -55,13 +61,14 @@ RCT_EXPORT_METHOD(storeData:(id)content intoFile:(NSString *)filename inDirector
   if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath])
     [[NSFileManager defaultManager] createDirectoryAtPath:fullPath withIntermediateDirectories:YES attributes:nil error:nil];
   
-  fullPath = [fullPath stringByAppendingPathComponent:filename];
+  fullPath = [self getFullPath:directory storedFilename:filename];
   
-  //BOOL result = [NSKeyedArchiver archiveRootObject:content toFile:fullPath];
+//  BOOL result = [NSKeyedArchiver archiveRootObject:content toFile:fullPath];
   
-  NSData *imageData = (NSData *)content;
+//  NSString *rs = [[NSString alloc] initWithData:content encoding:NSUTF8StringEncoding];
   
-  BOOL result = [ imageData writeToFile:fullPath atomically:YES];
+  
+  BOOL result = [ content writeToFile:fullPath atomically:YES];
   
   if (result)
     NSLog(@"Successfully saved %@", fullPath);
@@ -105,9 +112,9 @@ RCT_EXPORT_METHOD(storeData:(id)content intoFile:(NSString *)filename inDirector
 
 - (NSString*) getFullPath:(NSString *)directory storedFilename:(NSString *)filename {
   
-  NSString *fullPath = [ [_rootPath stringByAppendingPathComponent:directory] stringByAppendingString: filename ];
-  return fullPath;
+  NSString *fullPath = [ [_rootPath stringByAppendingPathComponent:directory] stringByAppendingString: [@"/" stringByAppendingString:filename] ];
   
+  return fullPath;
 }
 
 
@@ -148,7 +155,7 @@ RCT_EXPORT_METHOD(storeData:(id)content intoFile:(NSString *)filename inDirector
   if (![[NSFileManager defaultManager] fileExistsAtPath:fullPath])
     return nil;
   
-  fullPath = [fullPath stringByAppendingPathComponent:filename];
+  fullPath = [self getFullPath:directory storedFilename:filename];
   return [NSKeyedUnarchiver unarchiveObjectWithFile:fullPath];
 }
 

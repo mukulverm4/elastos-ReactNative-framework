@@ -10,6 +10,7 @@
 #import "AFURLSessionManager.h"
 #import "AFHTTPRequestOperation.h"
 #import "RCTStoreManager.h"
+#import "Util.h"
 
 @implementation RCTAssetManager
 
@@ -22,6 +23,11 @@ RCT_EXPORT_METHOD(downloadResourceFromUrl:(NSURL *)url andStoreInto:(NSString *)
   
   AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
   op.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+  
+//  [op setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+//    NSLog(@"is download: %f, %f, %f", (float)totalBytesRead, (float)totalBytesExpectedToRead, (float)totalBytesRead/totalBytesExpectedToRead);
+//  }];
   
   //On Succesfull
   [ op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -32,20 +38,24 @@ RCT_EXPORT_METHOD(downloadResourceFromUrl:(NSURL *)url andStoreInto:(NSString *)
     NSString *fileName = [ stringURL lastPathComponent ];
     
     BOOL isStored = [ storeManager storeDataIntoLocalFilesystem:responseObject intoFile:fileName inDirectory:cacheDirectory ];
+    NSString *fullPath = [storeManager getFullPath:cacheDirectory storedFilename:fileName];
+    NSString *hash = [Util SHA256WithData:responseObject];
+    NSDictionary *dic = @{
+                          @"path" : fullPath,
+                          @"hash" : hash,
+                          @"version" : @"1.0.0"
+                          };
+    [Util saveData:fileName withData:dic];
     
-    
-    NSString *fullPath = [ storeManager getFullPath:cacheDirectory storedFilename:fileName ];
-    
-    successCallback(@[@{@"filename":fullPath }]);
-    
-    
+    successCallback(@[dic]);
     
     // On Failure
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     errorCallback(@[[error localizedDescription]]);
   }];
   
-  [[NSOperationQueue mainQueue] addOperation:op];
+//  [[NSOperationQueue mainQueue] addOperation:op];
+  [op start];
   
 }
 
