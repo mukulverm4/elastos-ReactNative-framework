@@ -20,8 +20,10 @@ export default {
 	init,
 };
 
+const Style = IHStyle;
 export {
 	_,
 	moment,
-	init
+	init,
+	Style
 }

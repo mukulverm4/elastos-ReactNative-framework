@@ -1,31 +1,71 @@
 import React from 'react';
 import BasePage from '../common/BasePage';
 import {Cache} from 'app/lib';
+import {_, Style} from 'CR';
 
-import { Container, Header, Content, Button, Text } from 'native-base';
+import { Container, Header, Content, Button, Text, Grid, Col, View} from 'native-base';
+
+const sy = Style.create({
+  add_box: {
+    marginTop : 20
+  }
+})
 
 export default class extends BasePage{
+  ord_init(){
+    this.state = {
+      loading : true
+    };
+  }
   ord_renderMain(){
     return (
-      <Container>
-        <Content>
-          <Button onPress={this.click.bind(this)} light><Text> Light </Text></Button>
-          <Button primary><Text> Primary </Text></Button>
-          <Button success><Text> Success </Text></Button>
-          <Button info><Text> Info </Text></Button>
-          <Button warning><Text> Warning </Text></Button>
-          <Button danger><Text> Danger </Text></Button>
-          <Button dark><Text> Dark </Text></Button>
-        </Content>
-      </Container>
+      <Content>
+        {this.renderAppList()}
+
+        {this.renderAddButton()}
+      </Content>
     );
   }
 
-  ord_defineHeaderTitle(){
-    return 'Home page';
+  ord_checkLoading(){
+    return this.state.loading;
   }
 
-  click(){
+  ord_defineHeaderTitle(){
+    return 'DApp List';
+  }
+
+  renderAppList(){
+    const list = this.props.list;
+    return (
+      <Grid>
+        {
+          _.map(list, (item, i)=>{
+            return (
+              <Col key={i}><Text>{item}</Text></Col>
+            )
+          })
+        }
+      </Grid>
+    );
+  }
+
+  renderAddButton(){
+    return (
+      <View padder style={sy.add_box}>
+        <Button block success onPress={this.toInstallPage.bind(this)}>
+          <Text> Add New DApp </Text>
+        </Button>
+      </View>
+    );
+  }
+
+  toInstallPage(){
     Cache.method.call('goPath', 'install_app', 'modal');
+  }
+
+  async componentDidMount(){
+    await this.props.getDAppList();
+    this.setState({loading : false});
   }
 }
