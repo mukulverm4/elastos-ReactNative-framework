@@ -13,10 +13,7 @@ const common = {
 };
 
 const _class = {
-  '_gapLR_' : {
-    paddingLeft: '$gap',
-    paddingRight: '$gap'
-  }
+  
 };
 
 _.each(_class, (value, key)=>{

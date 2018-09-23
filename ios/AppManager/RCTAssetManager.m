@@ -15,7 +15,7 @@
 @implementation RCTAssetManager
 
 RCT_EXPORT_MODULE();
-RCT_EXPORT_METHOD(downloadResourceFromUrl:(NSURL *)url andStoreInto:(NSString *) cacheDirectory
+RCT_EXPORT_METHOD(downloadResourceFromUrl:(NSString *)name andUrl:(NSURL *)url andStoreInto:(NSString *) cacheDirectory
                   onSuccesfull:(RCTResponseSenderBlock)successCallback onFailure:(RCTResponseSenderBlock)errorCallback)
 {
   
@@ -43,6 +43,7 @@ RCT_EXPORT_METHOD(downloadResourceFromUrl:(NSURL *)url andStoreInto:(NSString *)
     NSDictionary *dic = @{
                           @"path" : fullPath,
                           @"hash" : hash,
+                          @"name" : name,
                           @"version" : @"1.0.0"
                           };
     [Util saveData:fileName withData:dic];
@@ -67,10 +68,22 @@ RCT_EXPORT_METHOD(listResourcesInCache:(NSString *) cacheDirectory
   RCTStoreManager* manager = [ [RCTStoreManager alloc] init];
   NSMutableArray* filenames = [ manager retrieveFilesFromDir:cacheDirectory ];
   
-  successCallback(@[filenames]);
+  NSMutableArray *rs = [[NSMutableArray alloc] init];
   
-  
-  
+  long count = filenames.count;
+  for( int i=0; i<count; i++){
+    NSString *url = [filenames objectAtIndex:i];
+    NSString *name = [url lastPathComponent];
+    
+    
+    NSDictionary *dic = [Util getData:name];
+    NSMutableDictionary *dic_cp = [NSMutableDictionary dictionary];
+    [dic_cp setDictionary:dic];
+    
+    [rs addObject:dic_cp];
+  }
+
+  successCallback(@[rs]);
 }
 
 

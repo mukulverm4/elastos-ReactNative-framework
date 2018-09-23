@@ -4,11 +4,13 @@ import { Container, Button, H3, Text } from "native-base";
 
 import styles from "./styles";
 
-const launchscreenBg = require("../../../assets/launchscreen-bg.png");
-const launchscreenLogo = require("../../../assets/logo-kitchen-sink.png");
+const launchscreenBg = require("../../static/launchscreen-bg.png");
+const launchscreenLogo = require("../../static/logo-kitchen-sink.png");
+
 
 class Home extends Component {
   render() {
+    console.log(555, launchscreenBg, launchscreenLogo);
     return (
       <Container>
         <StatusBar barStyle="light-content" />

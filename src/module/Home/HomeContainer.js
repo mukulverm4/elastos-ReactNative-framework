@@ -3,7 +3,6 @@ import HomeComponent from './HomeComponent';
 import dm from 'app/data';
 
 export default createContainer(HomeComponent, (state)=>{
-  console.log(123, state.app.dapp_list);
   return {
     list : state.app.dapp_list
   };
@@ -11,6 +10,9 @@ export default createContainer(HomeComponent, (state)=>{
   return {
     async getDAppList(){
       await dm.method.dapp.list();
+    },
+    async loadDapp(url){
+      await dm.method.dapp.loadByUrl(url);
     }
   };
 });

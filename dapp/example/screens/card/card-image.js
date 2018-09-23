@@ -17,8 +17,8 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-const logo = require("../../../assets/logo.png");
-const cardImage = require("../../../assets/drawer-cover.png");
+const logo = require("../../static/logo.png");
+const cardImage = require("../../static/drawer-cover.png");
 
 class NHCardImage extends Component {
   render() {

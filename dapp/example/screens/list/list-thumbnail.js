@@ -16,12 +16,12 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-const sankhadeep = require("../../../assets/contacts/sankhadeep.png");
-const supriya = require("../../../assets/contacts/supriya.png");
-const himanshu = require("../../../assets/contacts/himanshu.png");
-const shweta = require("../../../assets/contacts/shweta.png");
-const shruti = require("../../../assets/contacts/shruti.png");
-const shivraj = require("../../../assets/contacts/shivraj.jpg");
+const sankhadeep = require("../../static/contacts/sankhadeep.png");
+const supriya = require("../../static/contacts/supriya.png");
+const himanshu = require("../../static/contacts/himanshu.png");
+const shweta = require("../../static/contacts/shweta.png");
+const shruti = require("../../static/contacts/shruti.png");
+const shivraj = require("../../static/contacts/shivraj.jpg");
 const datas = [
   {
     img: sankhadeep,

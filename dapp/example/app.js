@@ -1,7 +1,7 @@
 import {AppRegistry} from 'react-native';
 
 import React from "react";
-import { Root } from "native-base";
+import { Root, StyleProvider } from "native-base";
 import { StackNavigator, DrawerNavigator } from "react-navigation";
 
 import getTheme from "./theme/components";
@@ -141,6 +141,9 @@ import NHToast from "./screens/toast/";
 import Actionsheet from "./screens/actionsheet";
 import NHAccordion from "./screens/accordion/";
 import NHDatePicker from "./screens/datepicker/";
+
+
+import dapp from '../shared/dapp';
 
 const Drawer = DrawerNavigator(
   {
@@ -319,7 +322,7 @@ const OP = () =>
     <AppNavigator />
   </Root>;
 
-const Setup = class extends Component {
+const Setup = class extends React.Component {
   render() {
     return (
       <StyleProvider style={getTheme(variables)}>
@@ -335,4 +338,4 @@ export default class App extends React.Component {
   }
 }
 
-// AppRegistry.registerComponent('example', () => App);
+dapp.start(App);

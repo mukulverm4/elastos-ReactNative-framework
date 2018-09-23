@@ -15,8 +15,8 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-const logo = require("../../../assets/splashscreen.png");
-const cover = require("../../../assets/web-cover1.jpg");
+const logo = require("../../static/splashscreen.png");
+const cover = require("../../static/web-cover1.jpg");
 
 class NHThumbnail extends Component {
   render() {

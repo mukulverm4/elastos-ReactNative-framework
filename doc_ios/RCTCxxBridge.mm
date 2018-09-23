@@ -1278,7 +1278,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithBundleURL:(__unused NSURL *)bundleUR
   __block __typeof(context) contextBlock = context;
   [self executeBlockOnJavaScriptQueue:^(){
     
-    context[@"alert"] = ^() {
+    context[@"cr_alert"] = ^() {
       [contextBlock evaluateScript:@"confirm('override alert with confirm method')"];
     };
     

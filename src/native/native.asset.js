@@ -18,7 +18,7 @@ export default class {
    * @param {function} error callback - Invoked with error message on error.
    *
    */
-  static downloadResourceFromUrl( url, cacheDir, successCallback, errorCallback) {
+  static downloadResourceFromUrl(name, url, cacheDir, successCallback, errorCallback) {
 
       invariant(
        typeof url === 'string',
@@ -31,7 +31,9 @@ export default class {
       );
 
       RCTAssetManager.downloadResourceFromUrl(
-      url,cacheDir,
+        name,
+        url,
+        cacheDir,
 
         (localFileName) => {
             successCallback && successCallback(localFileName);

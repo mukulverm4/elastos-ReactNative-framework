@@ -13,8 +13,8 @@ import {
 } from "native-base";
 import styles from "./style";
 
-const drawerCover = require("../../../assets/drawer-cover.png");
-const drawerImage = require("../../../assets/logo-kitchen-sink.png");
+const drawerCover = require("../../static/drawer-cover.png");
+const drawerImage = require("../../static/logo-kitchen-sink.png");
 const datas = [
   {
     name: "Anatomy",

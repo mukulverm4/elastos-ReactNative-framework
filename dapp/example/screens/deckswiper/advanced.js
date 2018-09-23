@@ -18,10 +18,10 @@ import {
 } from "native-base";
 import styles from "./styles";
 
-const cardOne = require("../../../assets/swiper-1.png");
-const cardTwo = require("../../../assets/swiper-2.png");
-const cardThree = require("../../../assets/swiper-3.png");
-const cardFour = require("../../../assets/swiper-4.png");
+const cardOne = require("../../static/swiper-1.png");
+const cardTwo = require("../../static/swiper-2.png");
+const cardThree = require("../../static/swiper-3.png");
+const cardFour = require("../../static/swiper-4.png");
 const cards = [
   {
     text: "Card One",

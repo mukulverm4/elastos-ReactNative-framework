@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 
-// import {name as appName} from './app.json';
 import {AppRegistry, StyleSheet, View, Image, ActionSheetIOS, NativeModules} from 'react-native';
 import { Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
+
+import dapp from '../shared/dapp';
 
 global.confirm = function(title){
   ActionSheetIOS.showActionSheetWithOptions({
@@ -16,7 +17,6 @@ global.confirm = function(title){
   });
 }
 
-const TEST = NativeModules.Test;
 
 class App extends Component{
     constructor(){
@@ -55,7 +55,7 @@ class App extends Component{
       }
     
       async click(){
-        alert("I am alert");
+        cr_alert("I am alert");
       }
       http_local(){
         // var xhr = new XMLHttpRequest();
@@ -138,5 +138,5 @@ const styles = StyleSheet.create({
     },
   });
 
-export default App;
-// AppRegistry.registerComponent(appName, () => App);
+// export default App;
+dapp.start(App);
