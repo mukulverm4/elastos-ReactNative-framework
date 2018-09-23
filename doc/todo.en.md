@@ -1,3 +1,3 @@
 ### TODO list
 
-## talk about how to check RN from a dapp.
+**please check this repo issues list**
