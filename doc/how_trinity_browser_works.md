@@ -24,4 +24,4 @@
 - If we’re to use wallet, did, carrier in an android native app, we would have to use the release for android: Example of these files are libElastos.HelloCarDemo.so, libElastos.DID.so, libelacarrier.so. This is also how we’re able to call RPC interfaces using program specific interfaces that are available
 - If we’re to make this available for react native framework, we need to make sure to write the plugins to talk to both android and ios platforms
 - The developer document for “How to call CAR from javascript” is not yet complete(Even in chinese so it’s hard to come up with a thorough process for react native framework)
-- The chinese team is also trying to currently complete the reflection through plugins without modifying the browser. Currently, the reflection is done by messing with the V8 engine 
+- The chinese team is also trying to currently complete the reflection through plugins without modifying the browser. Currently, the reflection is done by modifying the V8 engine 
