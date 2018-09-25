@@ -38,9 +38,9 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* ELASTOS_RN_FRAMEWORKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ELASTOS_RN_FRAMEWORKTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		394122402158BE7F005D69C4 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941223F2158BE7F005D69C4 /* Device.m */; };
 		394122B72158CD94005D69C4 /* ElastosCarrier.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 394122B22158CD4A005D69C4 /* ElastosCarrier.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		394122CE2158D25D005D69C4 /* Carrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394122CD2158D25D005D69C4 /* Carrier.swift */; };
+		3941233F215A374F005D69C4 /* Carrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941233E215A374F005D69C4 /* Carrier.m */; };
 		39A8D4EA214BE62F00819ED6 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D4E9214BE62F00819ED6 /* Test.m */; };
 		39A8D52B214CE8B100819ED6 /* RCTAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D52A214CE8B100819ED6 /* RCTAssetManager.m */; };
 		39A8D5522150D64400819ED6 /* RCTStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D5512150D64400819ED6 /* RCTStoreManager.m */; };
@@ -377,11 +377,11 @@
 		2D02E47B1E0B4A5D006451C7 /* ELASTOS_RN_FRAMEWORK-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELASTOS_RN_FRAMEWORK-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ELASTOS_RN_FRAMEWORK-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELASTOS_RN_FRAMEWORK-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3941223E2158BE7F005D69C4 /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		3941223F2158BE7F005D69C4 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		394122B22158CD4A005D69C4 /* ElastosCarrier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ElastosCarrier.framework; sourceTree = "<group>"; };
 		394122CC2158D25C005D69C4 /* ELASTOS_RN_FRAMEWORK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELASTOS_RN_FRAMEWORK-Bridging-Header.h"; sourceTree = "<group>"; };
 		394122CD2158D25D005D69C4 /* Carrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrier.swift; sourceTree = "<group>"; };
+		3941233D215A374F005D69C4 /* Carrier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Carrier.h; sourceTree = "<group>"; };
+		3941233E215A374F005D69C4 /* Carrier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carrier.m; sourceTree = "<group>"; };
 		39A8D4C3214BE62F00819ED6 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		39A8D4E9214BE62F00819ED6 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		39A8D529214CE8B100819ED6 /* RCTAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTAssetManager.h; sourceTree = "<group>"; };
@@ -599,10 +599,10 @@
 		3941223D2158BE65005D69C4 /* Carrier */ = {
 			isa = PBXGroup;
 			children = (
-				3941223E2158BE7F005D69C4 /* Device.h */,
-				3941223F2158BE7F005D69C4 /* Device.m */,
 				394122CD2158D25D005D69C4 /* Carrier.swift */,
 				394122CC2158D25C005D69C4 /* ELASTOS_RN_FRAMEWORK-Bridging-Header.h */,
+				3941233D215A374F005D69C4 /* Carrier.h */,
+				3941233E215A374F005D69C4 /* Carrier.m */,
 			);
 			path = Carrier;
 			sourceTree = "<group>";
@@ -1280,9 +1280,9 @@
 				39A8D52B214CE8B100819ED6 /* RCTAssetManager.m in Sources */,
 				39A8D5522150D64400819ED6 /* RCTStoreManager.m in Sources */,
 				39A8D4EA214BE62F00819ED6 /* Test.m in Sources */,
+				3941233F215A374F005D69C4 /* Carrier.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				394122402158BE7F005D69C4 /* Device.m in Sources */,
 				39A8D59221517ED100819ED6 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

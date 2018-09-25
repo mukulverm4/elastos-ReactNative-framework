@@ -14,7 +14,6 @@
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD (load:(NSString *)url ) {
-  NSLog(url);
   AppDelegate *app = (AppDelegate *)[[UIApplication  sharedApplication] delegate];
   [app reloadByUrl:url];
   
