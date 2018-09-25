@@ -12,3 +12,9 @@ _log.sign('CR framework init');
 
 data.init();
 _log.sign('data init');
+
+// test carrier plugin
+const Carrier = CR.plugin.Carrier;
+const carrier = new Carrier();
+_log.sign('carrier init');
+carrier.test();
