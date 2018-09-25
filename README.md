@@ -1,27 +1,30 @@
-# elastos-ReactNative-framework
-Parallel to Trinity Browser, this is the Elastos DApp framework implementation on React Native
+# Elastos-ReactNative-Framework
+Parallel to the Trinity Browser, this is the Elastos DApp framework implementation on React Native.
 
+## How to Set Up Environment
+```shell
+$ npm i
+$ react-native link
+```
 
-## how to set up env
-* npm i
-* react-native link
+## How to Run Local Docker Instance
+```shell
+$ npm run dep:start
+```
 
-## how to run local docker instance
-* npm run dep:start
+## How to Build DApp Files
+There are 2 demo DApp files in `/dapp` folder.
+* `$ npm run build:dapp -- --name test` to build test dapp.
+* Move all of `/build/ios` files to `/remote` folder.
 
-## how to build dapp file
-there are 2 demo dapp file in dapp folder.
-* "**npm run build:dapp -- --name test**" to build test dapp.
-* move all of build/ios files to remote folder.
-
-## how to run ios app
-* goto ios folder
-* run "pod install"
-* open ios/ELASTOS_RN_FRAMEWORK.xcworkspace with xcode
-* check your local ipaddress with "ifconfig"
-* change "DAPP_SERVER_URL" under src/config/index.js to your local ip address. default port is 3000 by docker instance setting.
+## How to Run iOS App
+* Go to `/ios` folder.
+* Run `$ pod install`.
+* Open `/ios/ELASTOS_RN_FRAMEWORK.xcworkspace` with XCode.
+* Check your local IP address with `$ ifconfig`.
+* Change `DAPP_SERVER_URL` under `/src/config/index.js` to your local IP address. Default port is 3000 by docker instance setting.
 
 ## Useful Links
 * [Code structure](./doc/structure.md)
 * [Requirements](./doc/requirements.md)
-* [TODO list](./doc/todo.en.md)
+* [TODO list](./doc/todo.md)
