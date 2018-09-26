@@ -36,19 +36,30 @@ const STREAM_CB_NAMES = [
   "onChannelResume",
 ];
 
+const exec = async (fnName, ...args)=>{
+  return new Promise((resolve, reject)=>{
+    NativeCarrier[fnName](...args, (err, rs)=>{
+      if(err){
+        reject(err);
+      }
+      else{
+        resolve(rs);
+      }
+    });
+  });
+};
+
 const Carrier = class {
   constructor(){
     this.callbacks = {};
-
   }
 
   static getVersion(){
-    // TODO
+    return exec('getVersion');
   }
 
   static isValidAddress(address){
-    // TODO
-    return true;
+    return exec('isValidAddress', address);
   }
 
   
