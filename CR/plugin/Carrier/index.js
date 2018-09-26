@@ -1,7 +1,8 @@
 import {NativeModules} from 'react-native';
 import _ from 'lodash';
+import config from './config';
 
-const NativeCarrier = NativeModules.Carrier;
+const NativeCarrier = NativeModules.CarrierPlugin;
 
 /*
  * This is Elastos Carrier plugin
@@ -50,10 +51,6 @@ const exec = async (fnName, ...args)=>{
 };
 
 const Carrier = class {
-  constructor(){
-    this.callbacks = {};
-  }
-
   static getVersion(){
     return exec('getVersion');
   }
@@ -61,6 +58,28 @@ const Carrier = class {
   static isValidAddress(address){
     return exec('isValidAddress', address);
   }
+
+  constructor(id){
+    this.id = id;
+
+    this.config = {
+      name : this.id,
+      udp_enabled : true,
+      bootstraps : config.bootstraps
+    };
+
+    this.callbacks = {};
+  }
+
+  start(){
+    return exec('createObject', this.config);
+  }
+
+  getAddress(){
+    return exec('getAddress', this.id);
+  }
+
+  
 
   
 

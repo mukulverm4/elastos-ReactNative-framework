@@ -13,7 +13,8 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      log : []
+      log : [],
+      error : ''
     };
 
     this.carrier = null;
@@ -22,12 +23,16 @@ class App extends Component{
     return (
       <Content style={styles.container}>
         <Text style={styles.log}>{this.state.log.join('\n')}</Text>
+        <Text style={styles.error}>{this.state.error}</Text>
 
         <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
           <Text>getVersion</Text>
         </Button>
         <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'isValidAddress')}>
           <Text>isValidAddress</Text>
+        </Button>
+        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getAddress')}>
+          <Text>getAddress</Text>
         </Button>
         
       </Content>
@@ -36,15 +41,22 @@ class App extends Component{
 
   async testFn(name){
     let rs = null;
-    
-    switch(name){
-      case 'getVersion':
-        rs = await Carrier.getVersion();
-        break;
-      case 'isValidAddress':
-        rs = await Carrier.isValidAddress('aaabbb');
-        break;
+    try{
+      switch(name){
+        case 'getVersion':
+          rs = await Carrier.getVersion();
+          break;
+        case 'isValidAddress':
+          rs = await Carrier.isValidAddress('aaabbb');
+          break;
+        case 'getAddress':
+          rs = await this.carrier.getAddress();
+          break;
+      }
+    }catch(e){
+
     }
+    
 
     if(!_.isNull(rs)){
       this.setLog(rs.toString());
@@ -56,9 +68,13 @@ class App extends Component{
     mlog.unshift(log)
     this.setState({log : mlog});
   }
+  setError(error){
+    this.setState({error});
+  }
 
-  componentDidMount(){
-    this.carrier = new Carrier;
+  async componentDidMount(){
+    this.carrier = new Carrier('carrier_demo');
+    await this.carrier.start();
     this.setLog('carrier init success');
   }
     
@@ -79,6 +95,12 @@ const styles = StyleSheet.create({
     log : {
       backgroundColor: '#000',
       color: 'green',
+      fontSize:14, 
+      width:"100%"
+    },
+    error : {
+      backgroundColor: '#000',
+      color: 'red',
       fontSize:14, 
       width:"100%"
     }

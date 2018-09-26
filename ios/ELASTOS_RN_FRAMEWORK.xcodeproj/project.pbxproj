@@ -41,6 +41,7 @@
 		3941233F215A374F005D69C4 /* Carrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3941233E215A374F005D69C4 /* Carrier.m */; };
 		394123E1215B701F005D69C4 /* ElastosCarrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */; };
 		394123E2215B701F005D69C4 /* ElastosCarrier.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		394123E6215BB30B005D69C4 /* CarrierPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 394123E5215BB30B005D69C4 /* CarrierPlugin.m */; };
 		39A8D4EA214BE62F00819ED6 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D4E9214BE62F00819ED6 /* Test.m */; };
 		39A8D52B214CE8B100819ED6 /* RCTAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D52A214CE8B100819ED6 /* RCTAssetManager.m */; };
 		39A8D5522150D64400819ED6 /* RCTStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D5512150D64400819ED6 /* RCTStoreManager.m */; };
@@ -381,6 +382,8 @@
 		3941233D215A374F005D69C4 /* Carrier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Carrier.h; sourceTree = "<group>"; };
 		3941233E215A374F005D69C4 /* Carrier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Carrier.m; sourceTree = "<group>"; };
 		394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ElastosCarrier.framework; sourceTree = "<group>"; };
+		394123E4215BB30B005D69C4 /* CarrierPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarrierPlugin.h; sourceTree = "<group>"; };
+		394123E5215BB30B005D69C4 /* CarrierPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarrierPlugin.m; sourceTree = "<group>"; };
 		39A8D4C3214BE62F00819ED6 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		39A8D4E9214BE62F00819ED6 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		39A8D529214CE8B100819ED6 /* RCTAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTAssetManager.h; sourceTree = "<group>"; };
@@ -601,6 +604,8 @@
 			children = (
 				3941233D215A374F005D69C4 /* Carrier.h */,
 				3941233E215A374F005D69C4 /* Carrier.m */,
+				394123E4215BB30B005D69C4 /* CarrierPlugin.h */,
+				394123E5215BB30B005D69C4 /* CarrierPlugin.m */,
 			);
 			path = Carrier;
 			sourceTree = "<group>";
@@ -1275,6 +1280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A8D52B214CE8B100819ED6 /* RCTAssetManager.m in Sources */,
+				394123E6215BB30B005D69C4 /* CarrierPlugin.m in Sources */,
 				39A8D5522150D64400819ED6 /* RCTStoreManager.m in Sources */,
 				39A8D4EA214BE62F00819ED6 /* Test.m in Sources */,
 				3941233F215A374F005D69C4 /* Carrier.m in Sources */,
