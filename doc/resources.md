@@ -5,6 +5,8 @@
 - [Developer Portal in Cyber Republic](https://www.cyberrepublic.org/developer/learn)
 - [Developer Doc on Github](https://github.com/elastos/Elastos.Developer.Doc)
 - [Cyber Republic Repository on Github](https://github.com/cyber-republic)
+- [Elastos Introductory Series Youtube Playlist](https://www.youtube.com/playlist?list=PL3vUOqY6AksGBD3Yve671Q_vsOUPxnzBc)
+- [Elastos Introductory Series Medium Articles](https://medium.com/@kiran.pachhai)
 
 ## Elastos Wallet/SPV SDK
 - The Wallet component in [Elastos.RT](https://github.com/elastos/Elastos.RT) encapsulates elastos [Elastos.ELA.SPV.Cpp](https://github.com/elastos /Elastos.ELA.SPV.Cpp) on github. The function of the repository is to use the provided interface to create wallet objects, create and send transactions, and more. At present, the wallet SPV SDK is only available for android platform. The iOS SDK has yet to be built
@@ -16,6 +18,9 @@
 
 ## Elastos ID SDK
 - https://github.com/elastos/Elastos.RT.SDK.DID.Checker.Android: SDK for DID Checker
+
+## Elastos Runtime SDK(Where all the C++ implementations of services are located: wallet, DID, carrier, etc)
+- https://github.com/elastos/Elastos.RT/tree/master/Sources/Elastos
 
 ## Links to learn more about how to develop React Native plugins for Android + ios
 - https://medium.com/@httpdeveloper/how-to-build-a-simple-react-native-custom-module-for-ios-and-android-from-scratch-a8efd31446f0
