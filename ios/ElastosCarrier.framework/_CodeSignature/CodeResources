@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/ElastosCarrier-Swift.h</key>
 		<data>
-		TOOXE0e4Dl6jbym7aCAADbWs8hY=
+		lCHwMachF5Y2xNjbyBQSXTFe/zA=
 		</data>
 		<key>Headers/ElastosCarrier.h</key>
 		<data>
@@ -14,39 +14,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		tG0ifB9LJ8rtG8FSzqEMOAsA0Ks=
+		AtOieFgkWAZZsufwM6eHOovv9rk=
 		</data>
-		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		qhstHPkom3N3/ucskCeMHP90pQk=
+		PvRb0P5oFPKlfVCMY/d8cEr7uAA=
 		</data>
-		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		BT3TGoc33DbKvnjuvanDc0lpu3k=
+		vzOvUc1dc4jkCYlw6MDYVIPtZPQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		2syT+6Y/kh1XfbLp0SyfSfhhi98=
-		</data>
-		<key>libs/libcrystal.dylib</key>
-		<data>
-		Hg9wVU3YY2e4nB4FLD1ONzw0moA=
-		</data>
-		<key>libs/libelacarrier.a</key>
-		<data>
-		tvgsa5dk+T0ePG8BEL7EoqvzeyQ=
-		</data>
-		<key>libs/libelacarrier.dylib</key>
-		<data>
-		MU4zq41HSOsG4Cq9bdnhYmSPasY=
-		</data>
-		<key>libs/libelasession.a</key>
-		<data>
-		9pGF9QRZ2OmsJZ6W71miPVFFSpc=
-		</data>
-		<key>libs/libelasession.dylib</key>
-		<data>
-		1+ztbuxQ8b26yjEaiq2pa+nviPM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -55,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TOOXE0e4Dl6jbym7aCAADbWs8hY=
+			lCHwMachF5Y2xNjbyBQSXTFe/zA=
 			</data>
 			<key>hash2</key>
 			<data>
-			BQx22MQoKwMPwMaTpyRoWjud8rbwBNMvqMzhcjqcMiA=
+			gk74dRx/alHpMoPxywQU5D83s70KgXCDADYPHz7EJUs=
 			</data>
 		</dict>
 		<key>Headers/ElastosCarrier.h</key>
@@ -73,26 +53,26 @@
 			C+ccjmGNEeJAzCqsj7S4G0w3GHLUEKRZZxFRSlwB5mw=
 			</data>
 		</dict>
-		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftdoc</key>
+		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qhstHPkom3N3/ucskCeMHP90pQk=
+			PvRb0P5oFPKlfVCMY/d8cEr7uAA=
 			</data>
 			<key>hash2</key>
 			<data>
-			jphOR4dGXVU8DgSAh4SZrpJVwQRdmUZO3tcxx1W+zww=
+			EU/Xt46ktyQGSPH1nrY1bu/OLSyQTm6cex1abfipbx0=
 			</data>
 		</dict>
-		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftmodule</key>
+		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BT3TGoc33DbKvnjuvanDc0lpu3k=
+			vzOvUc1dc4jkCYlw6MDYVIPtZPQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			rlHYooypsalyF1NivSz6TSYh8QI7RN9THh82hdmJXZQ=
+			HDz7pCZGnWFyV9pRRsP9VxVe73zEaWLzp2NtqIlGm1o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -104,61 +84,6 @@
 			<key>hash2</key>
 			<data>
 			DUVT+YG7xbhWFDOPAgdeeAlBn5jFlzBaFE2I45yN1uQ=
-			</data>
-		</dict>
-		<key>libs/libcrystal.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Hg9wVU3YY2e4nB4FLD1ONzw0moA=
-			</data>
-			<key>hash2</key>
-			<data>
-			H9skTfhPqkFUqZqULeRD8sKLI13HLOPjNR+TSIDFfns=
-			</data>
-		</dict>
-		<key>libs/libelacarrier.a</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tvgsa5dk+T0ePG8BEL7EoqvzeyQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			eq3cp8zEQOJ4CxGbagtsuusH/EXUtL20g40TJb4+RTQ=
-			</data>
-		</dict>
-		<key>libs/libelacarrier.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MU4zq41HSOsG4Cq9bdnhYmSPasY=
-			</data>
-			<key>hash2</key>
-			<data>
-			+1t0grz4CroHl0I1C/ZsHAQ31tkHBJEtigIcvvhvmUU=
-			</data>
-		</dict>
-		<key>libs/libelasession.a</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9pGF9QRZ2OmsJZ6W71miPVFFSpc=
-			</data>
-			<key>hash2</key>
-			<data>
-			B/n2S+0XhVM5tIFXVUrFWtva/9O4FrHinRvlY6CABbk=
-			</data>
-		</dict>
-		<key>libs/libelasession.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1+ztbuxQ8b26yjEaiq2pa+nviPM=
-			</data>
-			<key>hash2</key>
-			<data>
-			211S5vjy8GJQNwObNel/LtRgQiswzDL/vg66htaa7SU=
 			</data>
 		</dict>
 	</dict>

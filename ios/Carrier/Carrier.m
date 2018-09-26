@@ -11,6 +11,8 @@
 
 @implementation Carrier
 
+ELACarrierFriendInfo *info;
+
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD (test){
