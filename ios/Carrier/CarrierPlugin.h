@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 #import <ElastosCarrier/ElastosCarrier.h>
+#import <React/RCTEventEmitter.h>
 
-@interface CarrierPlugin : NSObject<RCTBridgeModule>
+@interface CarrierPlugin : RCTEventEmitter<RCTBridgeModule>
 
 @end

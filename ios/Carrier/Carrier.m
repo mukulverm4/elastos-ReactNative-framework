@@ -16,6 +16,7 @@
   ELACarrierConnectionStatus connectStatus;
   ELACarrier *elaCarrier;
   dispatch_queue_t managerCarrierQueue;
+  CarrierSendEvent _callback;
 }
 @end
 
@@ -36,7 +37,7 @@
   return self;
 }
 
--(void) start:(NSDictionary *)config completion:(void (^)(NSError *error))completion{
+-(void) start:(NSDictionary *)config sendEvent:(CarrierSendEvent)sendEvent completion:(void (^)(NSError *error))completion{
   if (_init) {
     return;
   }
@@ -98,7 +99,7 @@
     
     _init = [elaCarrier startWithIterateInterval:1000 error:&error];
     if (_init) {
-      
+      _callback = sendEvent;
     }
     else {
       RCTLog(@"Start ELACarrier instance failed: %@", error);
@@ -121,7 +122,10 @@
 
 -(void) carrierDidBecomeReady:(ELACarrier *)carrier{
   RCTLog(@"didBecomeReady");
-  
+  NSDictionary *param = @{
+                          @"type" : @"carrierDidBecomeReady"
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier selfUserInfoDidChange:(ELACarrierUserInfo *)newInfo{

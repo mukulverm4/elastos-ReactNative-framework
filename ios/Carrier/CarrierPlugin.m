@@ -23,6 +23,24 @@
 @implementation CarrierPlugin
 RCT_EXPORT_MODULE();
 
+- (NSArray<NSString *> *)supportedEvents {
+  return @[
+           @"onIdle",
+           @"onConnection",
+           @"onReady",
+           @"onSelfInfoChanged",
+           @"onFriends",
+           @"onFriendConnection",
+           @"onFriendInfoChanged",
+           @"onFriendPresence",
+           @"onFriendRequest",
+           @"onFriendAdded",
+           @"onFriendRemoved",
+           @"onFriendMessage",
+           @"onFriendInviteRequest",
+           @"onSessionRequest"
+           ];
+}
 
 RCT_EXPORT_METHOD (test){
   RCTLog(@"this is native carrier test");
@@ -37,7 +55,8 @@ RCT_EXPORT_METHOD
   
   Carrier *_carrier = [[Carrier alloc] init];
 //  ELACarrier *elaCarrier = [_carrier getIntance];
-  [_carrier start:config completion:^(NSError *error) {
+  CarrierSendEvent sendEvent = [self carrierCallback:config];
+  [_carrier start:config sendEvent:sendEvent completion:^(NSError *error) {
     if(error != nil){
       callback(@[error]);
       return;
@@ -131,6 +150,17 @@ RCT_EXPORT_METHOD
   callback(@[NULL_ERR, @"ok"]);
 }
 
+-(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
+  __weak __typeof(self) weakSelf = self;
+  CarrierSendEvent sendEvent = ^(ELACarrier *carrier, NSDictionary* param){
+    NSString *type = param[@"type"];
+    if([type isEqualToString:@"carrierDidBecomeReady"]){
+      [weakSelf sendEventWithName:@"onReady" body:@[@"ok"]];
+    }
+  };
+  
+  return sendEvent;
+}
 
 -(NSString *) createError: (NSString *)errorString{
   return errorString;

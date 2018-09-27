@@ -1,30 +1,15 @@
-import {NativeModules} from 'react-native';
+import {NativeModules, NativeEventEmitter} from 'react-native';
 import _ from 'lodash';
 import config from './config';
 
 const NativeCarrier = NativeModules.CarrierPlugin;
+const Listener = new NativeEventEmitter(NativeCarrier);
 
 /*
  * This is Elastos Carrier plugin
  * 
  */
 
-const CARRIER_CB_NAMES = [
-  "onIdle",
-  "onConnection",
-  "onReady",
-  "onSelfInfoChanged",
-  "onFriends",
-  "onFriendConnection",
-  "onFriendInfoChanged",
-  "onFriendPresence",
-  "onFriendRequest",
-  "onFriendAdded",
-  "onFriendRemoved",
-  "onFriendMessage",
-  "onFriendInviteRequest",
-  "onSessionRequest",
-];
 
 const STREAM_CB_NAMES = [
   "onStateChanged",
@@ -59,7 +44,7 @@ const Carrier = class {
     return exec('isValidAddress', address);
   }
 
-  constructor(id){
+  constructor(id, callbacks){
     this.id = id;
 
     this.config = {
@@ -68,7 +53,28 @@ const Carrier = class {
       bootstraps : config.bootstraps
     };
 
-    this.callbacks = {};
+    this.buildCallbacks(callbacks);
+  }
+
+  buildCallbacks(callbacks){
+    const _def = _.map(config.CARRIER_CB_NAMES, (name)=>{
+      const fn = ()=>{
+        console.log(`callback [${name}] fired`);
+      };
+      const tmp = {};
+      tmp[name] = fn;
+      return tmp;
+    });
+
+    const cb = _.extend(_def, callbacks || {});
+    _.each(cb, (item)=>{
+      const name = _.keys(item)[0];
+      const fn = _.values(item)[0];
+      Listener.addListener(name, (data)=>{
+        console.log(123, data);
+        fn(data);
+      });
+    });
   }
 
   start(){

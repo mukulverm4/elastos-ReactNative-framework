@@ -9,8 +9,11 @@
 #import <ElastosCarrier/ElastosCarrier.h>
 
 
+
 @interface Carrier : NSObject
 
--(void) start:(NSDictionary *)config completion:(void (^)(NSError *error))completion;
+typedef void (^CarrierSendEvent)(ELACarrier *carrier, NSDictionary *param);
+
+-(void) start:(NSDictionary *)config sendEvent:(CarrierSendEvent)sendEvent completion:(void (^)(NSError *error))completion;
 -(ELACarrier *) getIntance;
 @end
