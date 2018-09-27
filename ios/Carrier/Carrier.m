@@ -118,6 +118,13 @@
 -(void) carrier:(ELACarrier *)carrier connectionStatusDidChange:(enum ELACarrierConnectionStatus)newStatus{
   RCTLog(@"connectionStatusDidChange : %d", (int)newStatus);
   
+  NSDictionary *param = @{
+                          @"type" : @"connectionStatusDidChange",
+                          @"data" : @{
+                              @"newStatus" : [NSString stringWithFormat:@"%ld", newStatus]
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrierDidBecomeReady:(ELACarrier *)carrier{
@@ -130,7 +137,13 @@
 
 -(void) carrier:(ELACarrier *)carrier selfUserInfoDidChange:(ELACarrierUserInfo *)newInfo{
   RCTLog(@"selfUserInfoDidChange : %@", newInfo);
-  
+  NSDictionary *param = @{
+                          @"type" : @"selfUserInfoDidChange",
+                          @"data" : @{
+                              @"userInfo" : newInfo
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier didReceiveFriendsList:(NSArray<ELACarrierFriendInfo *> *)friends{

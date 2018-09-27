@@ -60,7 +60,7 @@ class App extends Component{
           break;
         case 'setSelfInfo':
           const info = {
-            name : 'aaa',
+            name : 'bbb', //['aaa', 'bbb', 'ccc', 'ddd', 'eee'](_.random(0, 4)),
             email : 'aaa@bbb.com',
             phone : '123456',
             description : 'bbbbb',

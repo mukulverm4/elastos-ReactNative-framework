@@ -22,5 +22,10 @@ export default {
     "onFriendMessage",
     "onFriendInviteRequest",
     "onSessionRequest",
-  ]
+  ],
+  CONNECTION_STATUS : {
+    '0' : 'connected',
+    '1' : 'disconnected'
+  }
+  
 };
