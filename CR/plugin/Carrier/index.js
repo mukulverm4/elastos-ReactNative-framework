@@ -79,6 +79,21 @@ const Carrier = class {
     return exec('getAddress', this.id);
   }
 
+  getSelfInfo(){
+    return exec('getSelfInfo', this.id);
+  }
+  setSelfInfo(info){
+    const user_info = _.extend({
+      name : '',
+      description : '',
+      email : '',
+      phone : '',
+      gender : '',
+      region : ''
+    }, info);
+    return exec('setSelfInfo', this.id, user_info);
+  }
+
   
 
   

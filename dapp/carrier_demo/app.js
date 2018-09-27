@@ -34,6 +34,12 @@ class App extends Component{
         <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getAddress')}>
           <Text>getAddress</Text>
         </Button>
+        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'setSelfInfo')}>
+          <Text>setSelfInfo</Text>
+        </Button>
+        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
+          <Text>getSelfInfo</Text>
+        </Button>
         
       </Content>
     );
@@ -52,9 +58,24 @@ class App extends Component{
         case 'getAddress':
           rs = await this.carrier.getAddress();
           break;
+        case 'setSelfInfo':
+          const info = {
+            name : 'aaa',
+            email : 'aaa@bbb.com',
+            phone : '123456',
+            description : 'bbbbb',
+            region : 'cccc',
+            gender : 'male'
+          };
+          rs = await this.carrier.setSelfInfo(info);
+          break;
+        case 'getSelfInfo':
+          const tmp = await this.carrier.getSelfInfo();
+          rs = JSON.stringify(tmp);
+          break;
       }
     }catch(e){
-
+      this.setError(e);
     }
     
 

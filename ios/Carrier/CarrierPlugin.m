@@ -79,6 +79,58 @@ RCT_EXPORT_METHOD
   callback(@[NULL_ERR, address]);
 }
 
+RCT_EXPORT_METHOD
+(getNodeId : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSString *address = [elaCarrier getNodeId];
+  callback(@[NULL_ERR, address]);
+}
+
+RCT_EXPORT_METHOD
+(getUserId : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSString *address = [elaCarrier getUserId];
+  callback(@[NULL_ERR, address]);
+}
+
+RCT_EXPORT_METHOD
+(getSelfInfo : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  ELACarrierUserInfo *info = [elaCarrier getSelfUserInfo:nil];
+  NSDictionary *rs = [self user_info:info];
+  
+  callback(@[NULL_ERR, rs]);
+}
+RCT_EXPORT_METHOD
+(setSelfInfo : (NSString *)cid :(NSDictionary *)info :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  ELACarrierUserInfo *f = [elaCarrier getSelfUserInfo:nil];
+  f.name = info[@"name"];
+  f.briefDescription = info[@"description"];
+  f.gender = info[@"gender"];
+  f.region = info[@"region"];
+  f.phone = info[@"phone"];
+  f.email = info[@"email"];
+  
+  [elaCarrier setSelfUserInfo:f error:nil];
+  callback(@[NULL_ERR, @"ok"]);
+}
+
 
 -(NSString *) createError: (NSString *)errorString{
   return errorString;
@@ -100,6 +152,20 @@ RCT_EXPORT_METHOD
 -(ELACarrier *) getELACarrier: (NSString *)cid{
   Carrier *carrier = [ALL_MAP objectForKey:cid];
   return [carrier getIntance];
+}
+
+-(NSDictionary *) user_info: (ELACarrierUserInfo *)info{
+  NSDictionary *dic = @{
+                        @"name" : info.name,
+                        @"description" : info.briefDescription,
+                        @"userId" : info.userId,
+                        @"gender" : info.gender,
+                        @"region" : info.region,
+                        @"email" : info.email,
+                        @"phone" : info.phone,
+                        @"hasAvatar" : info.hasAvatar ? @YES : @NO
+                        };
+  return dic;
 }
 
 @end
