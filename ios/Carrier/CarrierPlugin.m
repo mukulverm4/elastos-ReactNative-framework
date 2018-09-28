@@ -12,7 +12,7 @@
 
 #define NULL_ERR [NSNull null]
 
-//NSMutableDictionary *ALL_MAP = [NSMutableDictionary dictionary];
+static NSString * const OK = @"ok";
 
 @interface CarrierPlugin(){
   
@@ -65,7 +65,7 @@ RCT_EXPORT_METHOD
       ALL_MAP = [NSMutableDictionary dictionary];
     }
     [ALL_MAP setObject:_carrier forKey:name];
-    callback(@[NULL_ERR, @"ok"]);
+    callback(@[NULL_ERR, OK]);
   }];
 }
 
@@ -150,6 +150,52 @@ RCT_EXPORT_METHOD
   callback(@[NULL_ERR, @"ok"]);
 }
 
+RCT_EXPORT_METHOD
+(getFriendInfo : (NSString *)cid :(NSString *)friendId :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  if(error != nil){
+    callback(@[error]);
+  }
+  else{
+    ELACarrierFriendInfo *friend_info = [elaCarrier getFriendInfoForFriend:friendId error:&error];
+    callback(@[NULL_ERR, [self friend_info:friend_info]]);
+  }
+}
+RCT_EXPORT_METHOD
+(addFriend : (NSString *)cid :(NSString *)address :(NSString *)msg :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  BOOL flag = [elaCarrier addFriendWith:address withGreeting:msg error:&error];
+  if(!flag){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
+RCT_EXPORT_METHOD
+(acceptFriend : (NSString *)cid :(NSString *)userId :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  [elaCarrier acceptFriendWith:userId error:&error];
+  if(error != nil){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
+
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;
   CarrierSendEvent sendEvent = ^(ELACarrier *carrier, NSDictionary* param){
@@ -163,6 +209,21 @@ RCT_EXPORT_METHOD
     }
     else if([type isEqualToString:@"selfUserInfoDidChange"]){
       [weakSelf selfUserInfoDidChange:data];
+    }
+    else if([type isEqualToString:@"newFriendAdded"]){
+      [weakSelf newFriendAdded:data];
+    }
+    else if([type isEqualToString:@"didReceiveFriendsList"]){
+      [weakSelf didReceiveFriendsList:data];
+    }
+    else if([type isEqualToString:@"friendConnectionDidChange"]){
+      [weakSelf friendConnectionDidChange:data];
+    }
+    else if([type isEqualToString:@"friendInfoDidChange"]){
+      [weakSelf friendInfoDidChange:data];
+    }
+    else if([type isEqualToString:@"didReceiveFriendMessage"]){
+      [weakSelf didReceiveFriendMessage:data];
     }
 
   };
@@ -180,15 +241,45 @@ RCT_EXPORT_METHOD
   NSDictionary *info = [self user_info:param[@"userInfo"]];
   [self sendEventWithName:@"onSelfInfoChanged" body:@[info]];
 }
+-(void) newFriendAdded: (NSDictionary *)param{
+  NSDictionary *info = [self friend_info:param[@"friendInfo"]];
+  [self sendEventWithName:@"onFriendAdded" body:@[info]];
+}
+-(void) didReceiveFriendsList: (NSDictionary *)param{
+  NSArray<ELACarrierFriendInfo *> *original_list = param[@"friends"];
+  NSMutableArray *list = [NSMutableArray array];
+  for(ELACarrierFriendInfo *item in original_list){
+    [list addObject:[self friend_info:item]];
+  }
+  [self sendEventWithName:@"onFriends" body:@[list]];
+}
+-(void) friendConnectionDidChange: (NSDictionary *)param{
+  [self sendEventWithName:@"onFriendConnection" body:@[param]];
+}
+-(void) friendInfoDidChange: (NSDictionary *)param{
+  NSDictionary *info = [self friend_info:param[@"friendInfo"]];
+  [self sendEventWithName:@"onFriendInfoChanged" body:@[info]];
+}
+-(void) didReceiveFriendMessage: (NSDictionary *)param{
+  [self sendEventWithName:@"onFriendMessage" body:@[param]];
+}
 
--(NSString *) createError: (NSString *)errorString{
-  return errorString;
+
+-(NSString *) create_error: (id)error{
+  if([error isKindOfClass:[NSString class]]){
+    return error;
+  }
+  else if([error isKindOfClass:[NSError class]]){
+    return [error localizedDescription];
+  }
+  
+  return @"invalid error param";
 }
 
 -(BOOL) checkCarrierInstance: (NSString *)cid cb:(RCTResponseSenderBlock)callback{
   ELACarrier *elaCarrier = [self getELACarrier:cid];
   if(!elaCarrier){
-    callback(@[[self createError:@"carrier instance not exist"]]);
+    callback(@[[self create_error:@"carrier instance not exist"]]);
     return NO;
   }
   return YES;
@@ -216,5 +307,18 @@ RCT_EXPORT_METHOD
                         };
   return dic;
 }
+-(NSDictionary *) friend_info: (ELACarrierFriendInfo *)info{
+  NSDictionary *dic = [self user_info:info];
+  NSMutableDictionary *rs = [NSMutableDictionary dictionaryWithDictionary:dic];
+  [rs setObject:info.label forKey:@"label"];
+  [rs setObject:[NSString stringWithFormat:@"%ld", info.presence] forKey:@"presence"];
+  [rs setObject:[NSString stringWithFormat:@"%ld", info.status] forKey:@"status"];
+  
+  return rs;
+}
+
+//-(NSDictionary *) caeate_error: (NSError *)error{
+//  return [NSDictionary dictionaryWithObjectsAndKeys:@"code", error.code, @"message", error.userInfo, nil];
+//}
 
 @end

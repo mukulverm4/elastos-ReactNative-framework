@@ -40,6 +40,9 @@ class App extends Component{
         <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
           <Text>getSelfInfo</Text>
         </Button>
+        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'addFriend')}>
+          <Text>addFriend</Text>
+        </Button>
         
       </Content>
     );
@@ -47,41 +50,44 @@ class App extends Component{
 
   async testFn(name){
     let rs = null;
-    try{
-      switch(name){
-        case 'getVersion':
-          rs = await Carrier.getVersion();
-          break;
-        case 'isValidAddress':
-          rs = await Carrier.isValidAddress('aaabbb');
-          break;
-        case 'getAddress':
-          rs = await this.carrier.getAddress();
-          break;
-        case 'setSelfInfo':
-          const info = {
-            name : 'bbb', //['aaa', 'bbb', 'ccc', 'ddd', 'eee'](_.random(0, 4)),
-            email : 'aaa@bbb.com',
-            phone : '123456',
-            description : 'bbbbb',
-            region : 'cccc',
-            gender : 'male'
-          };
-          rs = await this.carrier.setSelfInfo(info);
-          break;
-        case 'getSelfInfo':
-          const tmp = await this.carrier.getSelfInfo();
-          rs = JSON.stringify(tmp);
-          break;
-      }
-    }catch(e){
-      this.setError(e);
+    switch(name){
+      case 'getVersion':
+        rs = await Carrier.getVersion();
+        break;
+      case 'isValidAddress':
+        rs = await Carrier.isValidAddress('aaabbb');
+        break;
+      case 'getAddress':
+        rs = await this.carrier.getAddress();
+        break;
+      case 'setSelfInfo':
+        const info = {
+          name : 'bbb',
+          email : 'aaa@bbb.com',
+          phone : '123456',
+          description : 'bbbbb',
+          region : 'cccc',
+          gender : 'male'
+        };
+        rs = await this.carrier.setSelfInfo(info);
+        break;
+      case 'getSelfInfo':
+        const tmp = await this.carrier.getSelfInfo();
+        rs = JSON.stringify(tmp);
+        break;
+      case 'addFriend':
+        try{
+          rs = await this.carrier.addFriend('Dg3h2TecXGzBU5NruvdYaMJoCdxGc3etPmJ6GVynKpLUm1whnQyE', 'hello');
+          console.log(rs);
+        }catch(e){
+          this.setError(e);
+        }
+        break;
     }
-    
-
-    if(!_.isNull(rs)){
+    if(rs || _.isString(rs)){
       this.setLog(rs.toString());
     }
+    
   }
 
   setLog(log){
@@ -94,7 +100,17 @@ class App extends Component{
   }
 
   async componentDidMount(){
-    this.carrier = new Carrier('carrier_demo');
+    this.carrier = new Carrier('carrier_demo', {
+      onReady : ()=>{
+        this.setLog('carrier is ready');
+      },
+      onConnection : (status)=>{
+        this.setLog('carrier connection status : '+Carrier.config.CONNECTION_STATUS[status]);
+      },
+      onFriends : (list)=>{
+        this.setLog('carrier connection status : '+JSON.stringify(list));
+      },
+    });
     await this.carrier.start();
     this.setLog('carrier init success');
   }
@@ -120,6 +136,7 @@ const styles = StyleSheet.create({
       width:"100%"
     },
     error : {
+      marginTop: 10,
       backgroundColor: '#000',
       color: 'red',
       fontSize:14, 

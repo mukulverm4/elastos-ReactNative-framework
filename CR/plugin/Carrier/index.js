@@ -25,6 +25,7 @@ const STREAM_CB_NAMES = [
 const exec = async (fnName, ...args)=>{
   return new Promise((resolve, reject)=>{
     NativeCarrier[fnName](...args, (err, rs)=>{
+      console.log('exec===>', err, rs);
       if(err){
         reject(err);
       }
@@ -36,6 +37,7 @@ const exec = async (fnName, ...args)=>{
 };
 
 const Carrier = class {
+  static config = config;
   static getVersion(){
     return exec('getVersion');
   }
@@ -57,22 +59,15 @@ const Carrier = class {
   }
 
   buildCallbacks(callbacks){
-    const _def = _.map(config.CARRIER_CB_NAMES, (name)=>{
-      const fn = ()=>{
-        console.log(`callback [${name}] fired`);
-      };
-      const tmp = {};
-      tmp[name] = fn;
-      return tmp;
-    });
-
-    const cb = _.extend(_def, callbacks || {});
-    _.each(cb, (item)=>{
-      const name = _.keys(item)[0];
-      const fn = _.values(item)[0];
+    const def_fn = (name)=>{
+      return (...args)=>{
+        console.log(`callback [${name}] fired : `, args);
+      }
+    };
+    _.each(config.CARRIER_CB_NAMES, (name)=>{
+      const fn = callbacks[name] || def_fn(name);
       Listener.addListener(name, (data)=>{
-        console.log(123, data);
-        fn(data);
+        fn(...data);
       });
     });
   }
@@ -98,6 +93,16 @@ const Carrier = class {
       region : ''
     }, info);
     return exec('setSelfInfo', this.id, user_info);
+  }
+
+  addFriend(address, msg){
+    return exec('addFriend', this.id, address, msg);
+  }
+  acceptFriend(userId){
+    return exec('acceptFriend', this.id, userId);
+  }
+  getFriendInfo(friendId){
+    return exec('getFriendInfo', this.id, friendId);
   }
 
   

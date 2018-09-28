@@ -149,17 +149,36 @@
 -(void) carrier:(ELACarrier *)carrier didReceiveFriendsList:(NSArray<ELACarrierFriendInfo *> *)friends{
   RCTLog(@"didReceiveFriendsList : %@", friends);
   
-  
+  NSDictionary *param = @{
+                          @"type" : @"didReceiveFriendsList",
+                          @"data" : @{
+                              @"friends" : friends
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier friendInfoDidChange:(NSString *)friendId newInfo:(ELACarrierFriendInfo *)newInfo{
   RCTLog(@"friendInfoDidChange : %@", newInfo);
-  
+  NSDictionary *param = @{
+                          @"type" : @"friendInfoDidChange",
+                          @"data" : @{
+                              @"friendInfo" : newInfo
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier friendConnectionDidChange:(NSString *)friendId newStatus:(ELACarrierConnectionStatus)newStatus{
   RCTLog(@"friendConnectionDidChange, userId : %@, newStatus : %zd", friendId, newStatus);
-  
+  NSDictionary *param = @{
+                          @"type" : @"friendConnectionDidChange",
+                          @"data" : @{
+                              @"friendId" : friendId,
+                              @"status" : [NSString stringWithFormat:@"%ld", newStatus]
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier friendPresenceDidChange:(NSString *)friendId newPresence:(ELACarrierPresenceStatus)newPresence{
@@ -169,16 +188,55 @@
 
 -(void) carrier:(ELACarrier *)carrier didReceiveFriendRequestFromUser:(NSString *)userId withUserInfo:(ELACarrierUserInfo *)userInfo hello:(NSString *)hello{
   RCTLog(@"didReceiveFriendRequestFromUser, userId : %@", userId);
+  NSDictionary *param = @{
+                          @"type" : @"didReceiveFriendRequestFromUser",
+                          @"data" : @{
+                              @"userId" : userId,
+                              @"msg" : hello
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier newFriendAdded:(ELACarrierFriendInfo *)newFriend{
   RCTLog(@"newFriendAdded : %@", newFriend);
-  
+  NSDictionary *param = @{
+                          @"type" : @"newFriendAdded",
+                          @"data" : @{
+                              @"friendInfo" : newFriend
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier friendRemoved:(NSString *)friendId{
-  
+  RCTLog(@"friendRemoved : %@", friendId);
+  NSDictionary *param = @{
+                          @"type" : @"friendRemoved",
+                          @"data" : @{
+                              @"friendId" : friendId
+                              }
+                          };
+  _callback(carrier, param);
 }
+
+-(void) carrier:(ELACarrier *)carrier didReceiveFriendMessage:(NSString *)from withMessage:(NSString *)message{
+  RCTLog(@"didReceiveFriendMessage : %@, %@", from, message);
+  NSDictionary *param = @{
+                          @"type" : @"didReceiveFriendMessage",
+                          @"data" : @{
+                              @"userId" : from,
+                              @"message" : message
+                              }
+                          };
+  _callback(carrier, param);
+}
+
+
+
+//- (void)carrierWillBecomeIdle: (ELACarrier *)carrier{
+//  RCTLog(@"carrierWillBecomeIdle");
+//}
 
 
 
