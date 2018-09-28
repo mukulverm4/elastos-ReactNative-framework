@@ -8,7 +8,7 @@ export default {
   ],
 
   CARRIER_CB_NAMES : [
-    "onIdle",
+    // "onIdle",
     "onConnection",
     "onReady",
     "onSelfInfoChanged",
@@ -26,6 +26,11 @@ export default {
   CONNECTION_STATUS : {
     '0' : 'connected',
     '1' : 'disconnected'
+  },
+  PRESENCE_STATUS : {
+    '0' : 'online',
+    '1' : 'away',
+    '2' : 'busy'
   }
   
 };

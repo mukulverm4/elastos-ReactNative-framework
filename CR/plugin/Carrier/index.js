@@ -104,6 +104,9 @@ const Carrier = class {
   getFriendInfo(friendId){
     return exec('getFriendInfo', this.id, friendId);
   }
+  sendMessage(friendId, msg){
+    return exec('sendFriendMessageTo', this.id, friendId, msg);
+  }
 
   
 

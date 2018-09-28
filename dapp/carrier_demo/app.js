@@ -21,35 +21,48 @@ class App extends Component{
   }
   render() {
     return (
-      <Content style={styles.container}>
+      <Container style={styles.container}>
         <Text style={styles.log}>{this.state.log.join('\n')}</Text>
         <Text style={styles.error}>{this.state.error}</Text>
 
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
-          <Text>getVersion</Text>
-        </Button>
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'isValidAddress')}>
-          <Text>isValidAddress</Text>
-        </Button>
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getAddress')}>
-          <Text>getAddress</Text>
-        </Button>
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'setSelfInfo')}>
-          <Text>setSelfInfo</Text>
-        </Button>
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
-          <Text>getSelfInfo</Text>
-        </Button>
-        <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'addFriend')}>
-          <Text>addFriend</Text>
-        </Button>
+        <Content>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
+            <Text>getVersion</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'isValidAddress')}>
+            <Text>isValidAddress</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getAddress')}>
+            <Text>getAddress</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'setSelfInfo')}>
+            <Text>setSelfInfo</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
+            <Text>getSelfInfo</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'addFriend')}>
+            <Text>addFriend</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'acceptFriend')}>
+            <Text>acceptFriend</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getFriendInfo')}>
+            <Text>getFriendInfo</Text>
+          </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'sendMessage')}>
+            <Text>sendMessage</Text>
+          </Button>
+        </Content>
         
-      </Content>
+        
+      </Container>
     );
   }
 
   async testFn(name){
     let rs = null;
+    let tmp = '';
     switch(name){
       case 'getVersion':
         rs = await Carrier.getVersion();
@@ -72,7 +85,7 @@ class App extends Component{
         rs = await this.carrier.setSelfInfo(info);
         break;
       case 'getSelfInfo':
-        const tmp = await this.carrier.getSelfInfo();
+        tmp = await this.carrier.getSelfInfo();
         rs = JSON.stringify(tmp);
         break;
       case 'addFriend':
@@ -82,6 +95,29 @@ class App extends Component{
         }catch(e){
           this.setError(e);
         }
+        break;
+      case 'acceptFriend':
+        try{
+          rs = await this.carrier.acceptFriend('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV');
+        }catch(e){
+          this.setError(e);
+        }
+        break;
+      case 'getFriendInfo':
+        try{
+          tmp = await this.carrier.getFriendInfo('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV');
+          rs = JSON.stringify(tmp);
+        }catch(e){
+          this.setError(e);
+        }
+        break;
+      case 'sendMessage':
+        try{
+          rs = await this.carrier.sendMessage('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV', 'adsfsfdsf');
+        }catch(e){
+          this.setError(e);
+        }
+        
         break;
     }
     if(rs || _.isString(rs)){
@@ -110,6 +146,9 @@ class App extends Component{
       onFriends : (list)=>{
         this.setLog('carrier connection status : '+JSON.stringify(list));
       },
+      onFriendMessage : (data)=>{
+        this.setLog('receive message from '+data.userId+' with ['+data.message+']');
+      }
     });
     await this.carrier.start();
     this.setLog('carrier init success');

@@ -183,7 +183,14 @@
 
 -(void) carrier:(ELACarrier *)carrier friendPresenceDidChange:(NSString *)friendId newPresence:(ELACarrierPresenceStatus)newPresence{
   RCTLog(@"friendPresenceDidChange, userId : %@, newPresence : %zd", friendId, newPresence);
-  
+  NSDictionary *param = @{
+                          @"type" : @"friendPresenceDidChange",
+                          @"data" : @{
+                              @"friendId" : friendId,
+                              @"presence" : [NSString stringWithFormat:@"%ld", newPresence]
+                              }
+                          };
+  _callback(carrier, param);
 }
 
 -(void) carrier:(ELACarrier *)carrier didReceiveFriendRequestFromUser:(NSString *)userId withUserInfo:(ELACarrierUserInfo *)userInfo hello:(NSString *)hello{
@@ -192,6 +199,7 @@
                           @"type" : @"didReceiveFriendRequestFromUser",
                           @"data" : @{
                               @"userId" : userId,
+                              @"userInfo" : userInfo,
                               @"msg" : hello
                               }
                           };

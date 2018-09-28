@@ -157,11 +157,12 @@ RCT_EXPORT_METHOD
   }
   ELACarrier *elaCarrier = [self getELACarrier:cid];
   NSError *error = nil;
-  if(error != nil){
-    callback(@[error]);
+  ELACarrierFriendInfo *friend_info = [elaCarrier getFriendInfoForFriend:friendId error:&error];
+  
+  if(friend_info == nil){
+    callback(@[[self create_error:error]]);
   }
   else{
-    ELACarrierFriendInfo *friend_info = [elaCarrier getFriendInfoForFriend:friendId error:&error];
     callback(@[NULL_ERR, [self friend_info:friend_info]]);
   }
 }
@@ -189,6 +190,21 @@ RCT_EXPORT_METHOD
   NSError *error = nil;
   [elaCarrier acceptFriendWith:userId error:&error];
   if(error != nil){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
+RCT_EXPORT_METHOD
+(sendFriendMessageTo : (NSString *)cid :(NSString *)userId :(NSString *)msg :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  BOOL flag = [elaCarrier sendFriendMessageTo:userId withMessage:msg error:&error];
+  if(!flag){
     callback(@[[self create_error:error]]);
   }
   else{
@@ -224,6 +240,15 @@ RCT_EXPORT_METHOD
     }
     else if([type isEqualToString:@"didReceiveFriendMessage"]){
       [weakSelf didReceiveFriendMessage:data];
+    }
+    else if([type isEqualToString:@"friendRemoved"]){
+      [weakSelf friendRemoved:data];
+    }
+    else if([type isEqualToString:@"friendPresenceDidChange"]){
+      [weakSelf friendPresenceDidChange:data];
+    }
+    else if([type isEqualToString:@"didReceiveFriendRequestFromUser"]){
+      [weakSelf didReceiveFriendRequestFromUser:data];
     }
 
   };
@@ -262,6 +287,20 @@ RCT_EXPORT_METHOD
 }
 -(void) didReceiveFriendMessage: (NSDictionary *)param{
   [self sendEventWithName:@"onFriendMessage" body:@[param]];
+}
+-(void) friendRemoved: (NSDictionary *)param{
+  [self sendEventWithName:@"onFriendRemoved" body:@[param]];
+}
+-(void) friendPresenceDidChange: (NSDictionary *)param{
+  [self sendEventWithName:@"onFriendPresence" body:@[param]];
+}
+-(void) didReceiveFriendRequestFromUser: (NSDictionary *)param{
+  NSDictionary *body = @{
+                         @"userId" : param[@"userId"],
+                         @"userInfo" : [self user_info:param[@"userInfo"]],
+                         @"msg" : param[@"msg"]
+                         };
+  [self sendEventWithName:@"onFriendRequest" body:@[body]];
 }
 
 
