@@ -10,7 +10,6 @@ const Listener = new NativeEventEmitter(NativeCarrier);
  * 
  */
 
-
 const STREAM_CB_NAMES = [
   "onStateChanged",
   "onStreamData",

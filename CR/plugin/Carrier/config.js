@@ -20,8 +20,8 @@ export default {
     "onFriendAdded",
     "onFriendRemoved",
     "onFriendMessage",
-    "onFriendInviteRequest",
-    "onSessionRequest",
+    "onFriendInviteRequest", // TODO
+    "onSessionRequest", // TODO
   ],
   CONNECTION_STATUS : {
     '0' : 'connected',
