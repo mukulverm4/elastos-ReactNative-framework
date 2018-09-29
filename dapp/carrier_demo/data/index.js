@@ -1,5 +1,5 @@
 import initStore from './store';
-import {Log, Cache, Error} from 'app/lib';
+import {Cache} from 'CR';
 // import ReducerType from './store/constant';
 import action from './store/action';
 

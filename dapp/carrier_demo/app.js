@@ -1,192 +1,112 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {StatusBar} from 'react-native';
+import {StyleProvider, Container, Tabs, Tab, Root} from 'native-base';
+import { Provider } from 'react-redux';
+import { addNavigationHelpers, NavigationActions, StackNavigator } from 'react-navigation';
+import {_, Cache} from 'CR';
+import './boot';
 
-import {AppRegistry, StyleSheet, View, Image, ActionSheetIOS, NativeModules} from 'react-native';
-import { Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
-
+import router from './config/router';
+import dm from './data';
 import dapp from '../shared/dapp';
 
-import {plugin} from 'CR';
-const Carrier = plugin.Carrier;
+const r = _.omit(router, ['init']);
+const CardStackNavigator = StackNavigator(r, {
+	headerMode : 'none',
+
+});
 
 
-class App extends Component{
-  constructor(){
-    super();
-    this.state = {
-      log : [],
-      error : ''
-    };
+const App = class extends React.Component{
+	constructor(p){
+		super(p);
 
-    this.carrier = null;
-  }
-  render() {
-    return (
-      <Container style={styles.container}>
-        <Text style={styles.log}>{this.state.log.join('\n')}</Text>
-        <Text style={styles.error}>{this.state.error}</Text>
+		this.state = {
+			page : CardStackNavigator.router.getStateForAction(CardStackNavigator.router.getActionForPathAndParams(router.init))
+		};
 
-        <Content>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
-            <Text>getVersion</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'isValidAddress')}>
-            <Text>isValidAddress</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getAddress')}>
-            <Text>getAddress</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'setSelfInfo')}>
-            <Text>setSelfInfo</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
-            <Text>getSelfInfo</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'addFriend')}>
-            <Text>addFriend</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'acceptFriend')}>
-            <Text>acceptFriend</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getFriendInfo')}>
-            <Text>getFriendInfo</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'sendMessage')}>
-            <Text>sendMessage</Text>
-          </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'close')}>
-            <Text>close</Text>
-          </Button>
-        </Content>
-        
-        
-      </Container>
-    );
-  }
+		Cache.method.register('goPath', this.goPath.bind(this));
+	}
+	render(){
+		const content = (
+			<CardStackNavigator
+				navigation={addNavigationHelpers({
+					state : this.state.page,
+					goPath : (p)=>{this.goPath(p);},
+					dispatch : (p)=>{this.goPath(p);}
+				})}
+			/>
+		);
+		return (
+			<Provider store={dm.store}>
+				<Root>
+					<StatusBar
+						backgroundColor="blue"
+						barStyle="default"
+					/>
+					{content}
+					
+				</Root>
+			</Provider>
+		);
+	}
 
-  async testFn(name){
-    let rs = null;
-    let tmp = '';
-    switch(name){
-      case 'getVersion':
-        rs = await Carrier.getVersion();
-        break;
-      case 'isValidAddress':
-        rs = await Carrier.isValidAddress('aaabbb');
-        break;
-      case 'getAddress':
-        rs = await this.carrier.getAddress();
-        break;
-      case 'setSelfInfo':
-        const info = {
-          name : 'bbb',
-          email : 'aaa@bbb.com',
-          phone : '123456',
-          description : 'bbbbb',
-          region : 'cccc',
-          gender : 'male'
-        };
-        rs = await this.carrier.setSelfInfo(info);
-        break;
-      case 'getSelfInfo':
-        tmp = await this.carrier.getSelfInfo();
-        rs = JSON.stringify(tmp);
-        break;
-      case 'addFriend':
-        try{
-          rs = await this.carrier.addFriend('Dg3h2TecXGzBU5NruvdYaMJoCdxGc3etPmJ6GVynKpLUm1whnQyE', 'hello');
-          console.log(rs);
-        }catch(e){
-          this.setError(e);
-        }
-        break;
-      case 'acceptFriend':
-        try{
-          rs = await this.carrier.acceptFriend('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV');
-        }catch(e){
-          this.setError(e);
-        }
-        break;
-      case 'getFriendInfo':
-        try{
-          tmp = await this.carrier.getFriendInfo('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV');
-          rs = JSON.stringify(tmp);
-        }catch(e){
-          this.setError(e);
-        }
-        break;
-      case 'sendMessage':
-        try{
-          rs = await this.carrier.sendMessage('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV', 'adsfsfdsf');
-        }catch(e){
-          this.setError(e);
-        }
-        
-        break;
-      case 'close':
-        rs = await this.carrier.close();
-        break;
-    }
-    if(rs || _.isString(rs)){
-      this.setLog(rs.toString());
-    }
-    
-  }
+	goPath(name, type='navigate', opts={}){
+		let rs = null;
+		if(!name || _.isString(name)){
+			let config = {};
+			if(type === 'back'){
+				config = {
+					actions : [NavigationActions.back({ routeName: name})]
+				};
+			}
+			else if(type === 'reset'){
+				config = {
+					index : opts.index || 0,
+					actions : opts.actions || [NavigationActions.navigate({ routeName: name})]
+				};
+			}
+			else if(type === 'modal'){
+				//show modal
+				config = router[name];
+				if(!config){
+					Error.create('goPath modal error : '+name);
+				}
+				Cache.method.apply('modal', ['open', {
+					child : config.screen
+				}]);
+				return false;
+			}
+			else{
+				config = {
+					routeName : name,
+					params : opts.params || {},
+					action : opts.action || null
+				};
+			}
 
-  setLog(log){
-    const mlog = this.state.log;
-    mlog.unshift(log)
-    this.setState({log : mlog});
-  }
-  setError(error){
-    this.setState({error});
-  }
+			rs = CardStackNavigator.router.getStateForAction(NavigationActions[type](config), this.state.page);
+		}
+		else if(_.isObject(name)){
+			rs = CardStackNavigator.router.getStateForAction(name, this.state.page);
+		}
+		else{
+			throw (`${name} is not valid`);
+		}
 
-  async componentDidMount(){
-    this.carrier = new Carrier('carrier_demo', {
-      onReady : ()=>{
-        this.setLog('carrier is ready');
-      },
-      onConnection : (status)=>{
-        this.setLog('carrier connection status : '+Carrier.config.CONNECTION_STATUS[status]);
-      },
-      onFriends : (list)=>{
-        this.setLog('carrier connection status : '+JSON.stringify(list));
-      },
-      onFriendMessage : (data)=>{
-        this.setLog('receive message from '+data.userId+' with ['+data.message+']');
-      }
-    });
-    await this.carrier.start();
-    this.setLog('carrier init success');
-  }
-    
-      
-}
+		const statusBar = router[name] ? router[name].statusBar : null;
+		if(statusBar){
+			if(statusBar.show){
+				StatusBar.setHidden(false);
+			}
+			else{
+				StatusBar.setHidden(true);
+			}
+		}
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#f9f9f9',
-      paddingLeft: 20,
-      paddingRight: 20,
-      paddingTop: 50
-    },
-    btn : {
-      marginTop: 12
-    },
-    log : {
-      backgroundColor: '#000',
-      color: 'green',
-      fontSize:14, 
-      width:"100%"
-    },
-    error : {
-      marginTop: 10,
-      backgroundColor: '#000',
-      color: 'red',
-      fontSize:14, 
-      width:"100%"
-    }
-  });
+
+		this.setState({page : rs});
+	}
+};
 
 dapp.start(App);

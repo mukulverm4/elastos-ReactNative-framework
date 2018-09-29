@@ -5,7 +5,7 @@ import Loading from './Loading';
 
 const style = CR.Style.create({
   box : {
-    backgroundColor: '#f9f9f9'
+    
   },
   header : {
     backgroundColor: '#43af92',
@@ -16,7 +16,7 @@ const style = CR.Style.create({
     color : '#333'
   },
   main : {
-
+    backgroundColor: '#f9f9f9'
   }
 });
 
@@ -40,7 +40,8 @@ export default class extends React.Component{
         {this.ord_renderHeader(header_props)}
 
         <Container style={style.main}>
-          {this.ord_checkLoading() ? this.ord_renderLoading() : this.ord_renderMain()}
+          {this.ord_renderMain()}
+          {this.ord_checkLoading() ? this.ord_renderLoading() : null}
         </Container>
 
         {this.ord_renderFooter()}
