@@ -114,6 +114,23 @@
   });
 }
 
+-(void) clean: (NSString *)name{
+  [self close];
+  
+  NSString *libraryDirectory = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+  NSString *dir = [@"elastos_rn/" stringByAppendingString:name];
+  NSString *elaDirectory = [libraryDirectory stringByAppendingPathComponent:dir];
+  [[NSFileManager defaultManager] removeItemAtPath:elaDirectory error:nil];
+}
+
+- (void) close{
+  [elaCarrier kill];
+  elaCarrier = nil;
+  
+  _init = NO;
+  connectStatus = ELACarrierConnectionStatusDisconnected;
+}
+
 #pragma mark - ELACarrierDelegate
 -(void) carrier:(ELACarrier *)carrier connectionStatusDidChange:(enum ELACarrierConnectionStatus)newStatus{
   RCTLog(@"connectionStatusDidChange : %d", (int)newStatus);

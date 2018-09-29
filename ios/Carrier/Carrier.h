@@ -16,4 +16,6 @@ typedef void (^CarrierSendEvent)(ELACarrier *carrier, NSDictionary *param);
 
 -(void) start:(NSDictionary *)config sendEvent:(CarrierSendEvent)sendEvent completion:(void (^)(NSError *error))completion;
 -(ELACarrier *) getIntance;
+-(void) clean: (NSString *)name;
+-(void) close;
 @end

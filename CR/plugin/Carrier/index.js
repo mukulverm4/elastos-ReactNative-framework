@@ -107,6 +107,16 @@ const Carrier = class {
   sendMessage(friendId, msg){
     return exec('sendFriendMessageTo', this.id, friendId, msg);
   }
+  removeFriend(friendId){
+    return exec('removeFriend', this.id, friendId);
+  }
+  
+  close(){
+    return exec('close', this.id);
+  }
+  clean(){
+    return exec('clean', this.id);
+  }
 
   
 

@@ -53,6 +53,9 @@ class App extends Component{
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'sendMessage')}>
             <Text>sendMessage</Text>
           </Button>
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'close')}>
+            <Text>close</Text>
+          </Button>
         </Content>
         
         
@@ -118,6 +121,9 @@ class App extends Component{
           this.setError(e);
         }
         
+        break;
+      case 'close':
+        rs = await this.carrier.close();
         break;
     }
     if(rs || _.isString(rs)){

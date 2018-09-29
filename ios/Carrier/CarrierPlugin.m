@@ -182,6 +182,21 @@ RCT_EXPORT_METHOD
   }
 }
 RCT_EXPORT_METHOD
+(removeFriend : (NSString *)cid :(NSString *)friendId :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  BOOL flag = [elaCarrier removeFriend:friendId error:&error];
+  if(!flag){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
+RCT_EXPORT_METHOD
 (acceptFriend : (NSString *)cid :(NSString *)userId :(RCTResponseSenderBlock)callback){
   if(![self checkCarrierInstance:cid cb:callback]){
     return;
@@ -211,6 +226,27 @@ RCT_EXPORT_METHOD
     callback(@[NULL_ERR, OK]);
   }
 }
+RCT_EXPORT_METHOD
+(close : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  Carrier *carrier = [self getCarrier:cid];
+  [carrier close];
+  callback(@[NULL_ERR, OK]);
+}
+RCT_EXPORT_METHOD
+(clean : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  Carrier *carrier = [self getCarrier:cid];
+  [carrier clean:cid];
+  [ALL_MAP removeObjectForKey:cid];
+  callback(@[NULL_ERR, OK]);
+}
+
+           
 
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;
