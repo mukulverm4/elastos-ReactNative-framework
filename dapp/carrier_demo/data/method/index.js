@@ -39,16 +39,18 @@ const F = {
 export default (dm)=>{
   return {
     async start(){
-      if(_carrier){
-        try{
-          await _carrier.close();
-        }catch(e){}
-      }
+      // try{
+      //   const tmp = new Carrier('carrier_demo', {});
+      //   await tmp.close();
+      // }catch(e){
+      //   console.log(111, e);
+      // }
+      // TODO : when use CMD+R to refresh page in debug mode. how to restart carrier node?
 
       _carrier = new Carrier('carrier_demo', F.buildCallback(dm));
       await _carrier.start();
     },
-    async getCarrier(){
+    getCarrier(){
       if(!_carrier){
         throw 'carrier not started';
       }

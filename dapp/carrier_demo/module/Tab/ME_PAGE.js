@@ -2,7 +2,7 @@ import React from 'react';
 import BasePage from 'app/module/common/BasePage';
 import {_, Style, Cache, util} from 'CR';
 
-import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right} from 'native-base';
+import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Button} from 'native-base';
 
 const sy = Style.create({
   t1 : {
@@ -33,6 +33,19 @@ const Page = class extends BasePage{
   }
   ord_defineHeaderTitle(){
     return 'PROFILE';
+  }
+
+  ord_renderHeaderRight(){
+    return (
+      <Button transparent onPress={this.toEditPage.bind(this)}>
+        {/* <Icon type="FontAwesome" name='edit' /> */}
+        <Text>EDIT</Text>
+      </Button>
+    );
+  }
+
+  toEditPage(){
+    Cache.method.call('goPath', 'profile_edit');
   }
 
   renderProfileInfo(){

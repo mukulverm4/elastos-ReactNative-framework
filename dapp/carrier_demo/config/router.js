@@ -1,5 +1,6 @@
 import HomePage from '../module/Home/Container';
 import TabPage from '../module/Tab/Container';
+import EditProfilePage from '../module/EditProfile/Container';
 
 export default {
 
@@ -16,6 +17,10 @@ export default {
 	tab: {
 		path : 'tab',
 		screen : TabPage
+	},
+	profile_edit : {
+		path : 'profile_edit',
+		screen : EditProfilePage
 	},
 
 

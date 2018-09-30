@@ -8,7 +8,7 @@ export default class extends BasePage{
   ord_renderHeaderLeft(){
     return (
       <Button transparent onPress={this.goBack.bind(this)}>
-        <Icon name='angle-left' />
+        <Icon type="FontAwesome" name='angle-left' />
       </Button>
     );
   }
