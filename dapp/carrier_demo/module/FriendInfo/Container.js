@@ -12,6 +12,11 @@ export default util.createContainer(Component, (state, ownProps)=>{
   return {
     async changeLabel(friendId, label){
       return await dm.method.friends.setLabel(friendId, label);
+    },
+
+    setTargetUser(userId){
+      dm.dispatch(dm.action.message_target(userId));
+      
     }
   };
 });

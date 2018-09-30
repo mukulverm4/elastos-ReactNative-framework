@@ -109,6 +109,7 @@ export default class extends Parent{
   }
 
   toSendPage(){
-    
+    this.props.setTargetUser(this.props.userId);
+    Cache.method.call('goPath', 'message_view');
   }
 }

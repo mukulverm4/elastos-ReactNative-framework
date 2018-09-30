@@ -3,6 +3,7 @@ import TabPage from '../module/Tab/Container';
 import EditProfilePage from '../module/EditProfile/Container';
 import AddFriendPage from '../module/AddFriend/Container';
 import FriendInfoPage from '../module/FriendInfo/Container';
+import MessageViewPage from '../module/MessageView/Container';
 
 export default {
 
@@ -31,6 +32,10 @@ export default {
 	friend_info : {
 		path : 'friend_info',
 		screen : FriendInfoPage
+	},
+	message_view : {
+		path : 'message_view',
+		screen : MessageViewPage
 	},
 
 

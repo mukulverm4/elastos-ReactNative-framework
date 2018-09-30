@@ -5,7 +5,7 @@ export default (dm)=>{
     async sendTextMessage(userId, message){
       const carrier = dm.method.getCarrier();
       const f_info = await carrier.getFriendInfo(userId);
-      if(f_info.state !== '0'){
+      if(f_info.status !== '0'){
         throw 'target is offline';
       }
 
