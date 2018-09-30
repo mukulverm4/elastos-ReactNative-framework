@@ -18,6 +18,13 @@ export default {
     }
 
     return rs;
+  },
+
+  friends_all_set(param){
+    return {
+      type : type.friends['all:set'],
+      all : param
+    };
   }
 
 };

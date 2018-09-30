@@ -1,6 +1,7 @@
 import HomePage from '../module/Home/Container';
 import TabPage from '../module/Tab/Container';
 import EditProfilePage from '../module/EditProfile/Container';
+import AddFriendPage from '../module/AddFriend/Container';
 
 export default {
 
@@ -22,6 +23,11 @@ export default {
 		path : 'profile_edit',
 		screen : EditProfilePage
 	},
+	add_friend : {
+		path : 'add_friend',
+		screen : AddFriendPage
+	},
+
 
 
 

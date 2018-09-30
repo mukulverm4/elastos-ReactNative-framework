@@ -2,6 +2,7 @@
 import {plugin} from 'CR';
 const Carrier = plugin.Carrier;
 import me from './me';
+import friends from './friends';
 
 let _carrier = null;
 const F = {
@@ -27,9 +28,37 @@ const F = {
           }));
         }
       },
-      // onFriends : (list)=>{
-        
-      // },
+      onFriends : (list)=>{
+        const param = {};
+        _.each(list, (item)=>{
+          param[item.userId] = item;
+        });
+        dm.dispatch(dm.action.friends_all_set(param));
+      },
+      onFriendAdded : (list)=>{
+        const param = {};
+        _.each(list, (item)=>{
+          param[item.userId] = item;
+        });
+        dm.dispatch(dm.action.friends_all_set(param));
+      },
+      onFriendRequest : (a, b)=>{
+        console.log(111, a, b)
+      },
+      onFriendConnection : (data)=>{
+        const param = {};
+        param[data.friendId] = {
+          status : data.status
+        };
+
+        dm.dispatch(dm.action.friends_all_set(param));
+      },
+      onFriendInfoChanged : (data)=>{
+        const param = {};
+        param[data.userId] = data;
+
+        dm.dispatch(dm.action.friends_all_set(param));
+      }
       // onFriendMessage : (data)=>{
         
       // }
@@ -60,6 +89,7 @@ export default (dm)=>{
 
 
 
-    me : me(dm)
+    me : me(dm),
+    friends : friends(dm)
   };
 };

@@ -10,6 +10,8 @@ import router from './config/router';
 import dm from './data';
 import dapp from '../shared/dapp';
 
+import GlobalModal from 'app/module/common/GlobalModal';
+
 const r = _.omit(router, ['init']);
 const CardStackNavigator = StackNavigator(r, {
 	headerMode : 'none',
@@ -44,9 +46,11 @@ const App = class extends React.Component{
 						backgroundColor="blue"
 						barStyle="default"
 					/>
+	
 					{content}
-					
+					<GlobalModal />
 				</Root>
+				
 			</Provider>
 		);
 	}
@@ -70,7 +74,7 @@ const App = class extends React.Component{
 				//show modal
 				config = router[name];
 				if(!config){
-					Error.create('goPath modal error : '+name);
+					throw ('goPath modal error : '+name);
 				}
 				Cache.method.apply('modal', ['open', {
 					child : config.screen
