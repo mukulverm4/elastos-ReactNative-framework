@@ -245,8 +245,21 @@ RCT_EXPORT_METHOD
   [ALL_MAP removeObjectForKey:cid];
   callback(@[NULL_ERR, OK]);
 }
-
-           
+RCT_EXPORT_METHOD
+(setLabel : (NSString *)cid :(NSString *)friendId :(NSString *)label :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  BOOL flag = [elaCarrier setLabelForFriend:friendId withLabel:label error:&error];
+  if(!flag){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
 
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;

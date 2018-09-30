@@ -109,6 +109,9 @@ const Carrier = class {
   removeFriend(friendId){
     return exec('removeFriend', this.id, friendId);
   }
+  setLabel(friendId, label){
+    return exec('setLabel', this.id, friendId, label);
+  }
   
   close(){
     return exec('close', this.id);

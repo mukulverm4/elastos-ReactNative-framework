@@ -41,12 +41,12 @@ const Page = class extends BasePage{
     return (
       <List>
         <ListItem itemHeader first>
-          <Text>Online</Text>
+          <Text>ONLINE</Text>
         </ListItem>
         {_.map(list_online, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
           return (
-            <ListItem key={i}>
+            <ListItem onPress={this.gotoInfo.bind(this, item.userId)}  key={i}>
               <Left>
                 <Text>{item.name || 'NA'}{label}</Text>
               </Left>
@@ -58,12 +58,12 @@ const Page = class extends BasePage{
         })}
 
         <ListItem itemHeader last>
-          <Text>Offline</Text>
+          <Text>OFFLINE</Text>
         </ListItem>
         {_.map(list_offline, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
           return (
-            <ListItem key={i}>
+            <ListItem onPress={this.gotoInfo.bind(this, item.userId)} key={i}>
               <Left>
                 <Text>{item.name || 'NA'}{label}</Text>
               </Left>
@@ -79,6 +79,14 @@ const Page = class extends BasePage{
 
   addFriend(){
     Cache.method.call('goPath', 'add_friend');
+  }
+
+  gotoInfo(id){
+    Cache.method.call('goPath', 'friend_info', 'navigate', {
+      params : {
+        userId : id
+      }
+    });
   }
 };
 

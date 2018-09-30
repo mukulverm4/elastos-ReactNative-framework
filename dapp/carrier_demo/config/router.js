@@ -2,6 +2,7 @@ import HomePage from '../module/Home/Container';
 import TabPage from '../module/Tab/Container';
 import EditProfilePage from '../module/EditProfile/Container';
 import AddFriendPage from '../module/AddFriend/Container';
+import FriendInfoPage from '../module/FriendInfo/Container';
 
 export default {
 
@@ -26,6 +27,10 @@ export default {
 	add_friend : {
 		path : 'add_friend',
 		screen : AddFriendPage
+	},
+	friend_info : {
+		path : 'friend_info',
+		screen : FriendInfoPage
 	},
 
 
