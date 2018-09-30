@@ -40,7 +40,7 @@ const Page = class extends BasePage{
     const name = info.name || 'NA';
     const time = moment(data.time).format('YYYY-MM-DD HH:mm:ss');
     return (
-      <ListItem key={i} avatar>
+      <ListItem onPress={this.goto.bind(this, d.userId)} key={i} avatar>
         <Left>
           <Icon type="FontAwesome" name="user" />
         </Left>
@@ -54,11 +54,16 @@ const Page = class extends BasePage{
       </ListItem>
     );
   }
+
+  goto(userId){
+    this.props.setTargetUser(userId);
+    Cache.method.call('goPath', 'message_view');
+  }
   
 }
 
 export default util.createContainer(Page, (state)=>{
-  console.log(333, state.message.all);
+console.log(state.message);
   return {
     message : state.message.all,
     unread : state.message.unread,
@@ -68,6 +73,10 @@ export default util.createContainer(Page, (state)=>{
   return {
     getInfo(userId=null){
       return dm.method.message.getUserInfo(userId);
+    },
+    setTargetUser(userId){
+      dm.dispatch(dm.action.message_target(userId));
+      
     }
   };
 })

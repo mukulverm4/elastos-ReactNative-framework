@@ -15,6 +15,9 @@ export default util.createContainer(Component, (state)=>{
   return {
     async sendText(userId, text){
       await dm.method.message.sendTextMessage(userId, text);
+    },
+    removeTarget(){
+      dm.dispatch(dm.action.message_target(''));
     }
   };
 });

@@ -162,4 +162,20 @@ export default class extends StackPage{
     return name;
   }
 
+  componentDidMount(){
+    console.log(this.props.navigation)
+    const didBlurSubscription = this.props.navigation.addListener('didBlur', (payload)=>{
+      console.debug('didBlur', payload);
+      alert(111);
+    });
+    
+    // Remove the listener when you are done
+    // didBlurSubscription.remove();
+  }
+
+  componetWillUnmount(){
+    alert(1);
+    this.props.removeTarget();
+  }
+
 }
