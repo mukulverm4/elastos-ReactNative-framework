@@ -42,8 +42,14 @@ const F = {
         });
         dm.dispatch(dm.action.friends_all_set(param));
       },
-      onFriendRequest : (a, b)=>{
-        console.log(111, a, b)
+      onFriendRequest : (data)=>{
+        const param = {};
+        param[data.userId] = {
+          ...data.userInfo,
+          userId : data.userId,
+          msg : data.msg
+        };
+        dm.dispatch(dm.action.friends_wait_set(param));
       },
       onFriendConnection : (data)=>{
         const param = {};

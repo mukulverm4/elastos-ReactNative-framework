@@ -9,7 +9,8 @@ const DEFAULT = {
   },
 
   friends : {
-    all : {}
+    all : {},
+    wait : {}
   }
 };
 
@@ -59,6 +60,22 @@ export const friends = (state=DEFAULT.friends, action={})=>{
         ...state,
         all : {
           ...state.all
+        }
+      }
+    case type.friends['wait:set']:
+      tmp = _.merge({}, state.wait, action.param);
+      return {
+        ...state,
+        wait : {
+          ...tmp
+        }
+      };
+    case type.friends['wait:remove']:
+      delete state.wait[action.param];
+      return {
+        ...state,
+        wait : {
+          ...state.wait
         }
       }
   }

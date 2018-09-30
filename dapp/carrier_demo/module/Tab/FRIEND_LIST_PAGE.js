@@ -14,12 +14,18 @@ const Page = class extends BasePage{
   }
 
   ord_renderHeaderRight(){
-    return (
-      <Button transparent onPress={this.addFriend.bind(this)}>
-        <Icon type="FontAwesome" name='plus-circle' style={{color:'#fff'}} />
-        {/* <Text>ADD</Text> */}
-      </Button>
-    );
+    return [
+      (
+        <Button key="1" transparent onPress={this.addFriend.bind(this)}>
+          <Icon type="FontAwesome" name='plus-circle' style={{color:'#fff'}} />
+        </Button>
+      ),
+      (
+        <Button key="2" transparent onPress={this.refreshList.bind(this)}>
+          <Icon type="FontAwesome" name='refresh' style={{color:'#fff'}} />
+        </Button>
+      )
+    ];
   }
 
   ord_renderMain(){
@@ -37,9 +43,37 @@ const Page = class extends BasePage{
     });
     const list_offline = _.filter(list, (item)=>{
       return item.status === '1';
-    })
+    });
+    const wait_list = _.values(this.props.wait_accept);
     return (
       <List>
+        {wait_list.length>0 && (
+          <ListItem itemHeader first>
+            <Text>REQUEST</Text>
+          </ListItem>
+        )}
+        
+        {wait_list.length>0 && _.map(wait_list, (item, i)=>{
+          const l = {};
+          if(i === wait_list.length-1){
+            l.style = {
+              marginBottom : 20
+            };
+          }
+          return (
+            <ListItem key={i} {...l}>
+              <Left>
+                <Text>{item.name || 'NA'}</Text>
+              </Left>
+              <Right>
+                <Button success small onPress={this.acceptFriend.bind(this, item.userId)}>
+                  <Text>Accept</Text>
+                </Button>
+              </Right>
+            </ListItem>
+          )
+        })}
+
         <ListItem itemHeader first>
           <Text>ONLINE</Text>
         </ListItem>
@@ -88,11 +122,27 @@ const Page = class extends BasePage{
       }
     });
   }
+
+  async refreshList(){
+    await dm.method.friends.getFriendList();
+  }
+
+  async acceptFriend(userId){
+    try{
+      await dm.method.friends.acceptFriend(userId);
+    }catch(e){
+      Toast.show({
+        text: e,
+        type : 'danger'
+      });
+    }
+  }
 };
 
 export default util.createContainer(Page, (state)=>{
-  console.log(222, state.friends.all);
+  console.log(222, state.friends);
   return {
-    friends : state.friends.all
+    friends : state.friends.all,
+    wait_accept : state.friends.wait
   };
 })

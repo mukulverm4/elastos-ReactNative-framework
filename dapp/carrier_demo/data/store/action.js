@@ -25,6 +25,19 @@ export default {
       type : type.friends['all:set'],
       all : param
     };
+  },
+
+  friends_wait_set(param){
+    return {
+      type : type.friends['wait:set'],
+      param
+    };
+  },
+  friends_wait_remove(friendId){
+    return {
+      type : type.friends['wait:remove'],
+      param : friendId
+    };
   }
 
 };

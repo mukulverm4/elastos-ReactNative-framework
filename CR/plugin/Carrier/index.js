@@ -112,6 +112,9 @@ const Carrier = class {
   setLabel(friendId, label){
     return exec('setLabel', this.id, friendId, label);
   }
+  getFriendList(){
+    return exec('getFriendList', this.id);
+  }
   
   close(){
     return exec('close', this.id);

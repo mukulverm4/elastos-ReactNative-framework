@@ -260,6 +260,21 @@ RCT_EXPORT_METHOD
     callback(@[NULL_ERR, OK]);
   }
 }
+RCT_EXPORT_METHOD
+(getFriendList : (NSString *)cid :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  NSArray<ELACarrierFriendInfo *> *original_list = [elaCarrier getFriends:&error];
+  NSMutableArray *list = [NSMutableArray array];
+  for(ELACarrierFriendInfo *item in original_list){
+    [list addObject:[self friend_info:item]];
+  }
+  
+  callback(@[NULL_ERR, list]);
+}
 
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;

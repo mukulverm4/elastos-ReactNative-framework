@@ -10,6 +10,8 @@ export default {
     'all:set',
     'all:add',
     'all:remove',
-    'all:update'
+    'all:update',
+    'wait:set',
+    'wait:remove'
   ])
 };
