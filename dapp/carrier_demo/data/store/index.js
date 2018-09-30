@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import {me, friends} from './appReducer';
+import {me, friends, message} from './appReducer';
 
 
 
@@ -9,7 +9,8 @@ import {me, friends} from './appReducer';
 export default () => {
 	const reducers = {
 		me,
-		friends
+		friends,
+		message
 	};
 
 	const middleware = [thunk];

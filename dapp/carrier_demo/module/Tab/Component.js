@@ -2,10 +2,11 @@ import React from 'react';
 import BasePage from 'app/module/common/BasePage';
 import {_, Style, Cache} from 'CR';
 
-import { Container, Content, Tab, Tabs, List, ListItem, Text} from 'native-base';
+import { Container, Content, View, Tab, Tabs, List, ListItem, Text, Badge} from 'native-base';
 
 import ME_PAGE from './ME_PAGE';
 import FRIEND_LIST_PAGE from './FRIEND_LIST_PAGE';
+import CHAT_LIST_PAGE from './CHAT_LIST_PAGE';
 
 const sy = Style.create({
 
@@ -16,8 +17,8 @@ export default class extends BasePage{
     return (
       <Container>
         <Tabs tabBarPosition="bottom">
-          <Tab heading="CHAT">
-            
+          <Tab heading={this.getChatHeader()}>
+            <CHAT_LIST_PAGE />
           </Tab>
           <Tab heading="FRIENDS">
             <FRIEND_LIST_PAGE />
@@ -27,6 +28,27 @@ export default class extends BasePage{
           </Tab>
         </Tabs>
       </Container>
+    );
+  }
+
+  getChatHeader(){
+    const {unread_total} = this.props;
+    let num = null;
+    if(unread_total > 0){
+      num = unread_total;
+    }
+    if(num > 99){
+      num = '99+';
+    }
+    return (
+      <View>
+        <Text>CHAT</Text>
+        {num && (
+          <Badge>
+            <Text>{num}</Text>
+          </Badge>
+        )}
+      </View>
     );
   }
 

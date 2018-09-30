@@ -13,5 +13,11 @@ export default {
     'all:update',
     'wait:set',
     'wait:remove'
+  ]),
+
+  message : util.constants('dapp', 'demo', [
+    'add',
+    'target',
+    'unread'
   ])
 };

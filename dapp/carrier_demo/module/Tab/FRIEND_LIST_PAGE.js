@@ -16,13 +16,13 @@ const Page = class extends BasePage{
   ord_renderHeaderRight(){
     return [
       (
-        <Button key="1" transparent onPress={this.addFriend.bind(this)}>
-          <Icon type="FontAwesome" name='plus-circle' style={{color:'#fff'}} />
+        <Button key="2" transparent onPress={this.refreshList.bind(this)}>
+          <Icon type="FontAwesome" name='refresh' style={{color:'#fff'}} />
         </Button>
       ),
       (
-        <Button key="2" transparent onPress={this.refreshList.bind(this)}>
-          <Icon type="FontAwesome" name='refresh' style={{color:'#fff'}} />
+        <Button key="1" transparent onPress={this.addFriend.bind(this)}>
+          <Icon type="FontAwesome" name='plus-circle' style={{color:'#fff'}} />
         </Button>
       )
     ];

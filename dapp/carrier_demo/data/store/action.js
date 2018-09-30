@@ -38,6 +38,20 @@ export default {
       type : type.friends['wait:remove'],
       param : friendId
     };
+  },
+
+  message_add(param){
+    return {
+      type : type.message['add'],
+      param
+    };
+  },
+
+  message_target(userId){
+    return {
+      type : type.message['target'],
+      param : userId
+    }
   }
 
 };

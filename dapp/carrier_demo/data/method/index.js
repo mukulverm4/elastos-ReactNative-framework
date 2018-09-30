@@ -3,6 +3,7 @@ import {plugin} from 'CR';
 const Carrier = plugin.Carrier;
 import me from './me';
 import friends from './friends';
+import messgae from './message';
 
 let _carrier = null;
 const F = {
@@ -64,10 +65,18 @@ const F = {
         param[data.userId] = data;
 
         dm.dispatch(dm.action.friends_all_set(param));
+      },
+      onFriendMessage : (data)=>{
+        const param = {
+          type : 'to',
+          userId : data.userId,
+          time : Date.now(),
+          content : data.message,
+          contentType : 'text'
+        };
+
+        dm.dispatch(dm.action.message_add(param));
       }
-      // onFriendMessage : (data)=>{
-        
-      // }
     };
   }
 };
@@ -96,6 +105,7 @@ export default (dm)=>{
 
 
     me : me(dm),
-    friends : friends(dm)
+    friends : friends(dm),
+    message : messgae(dm)
   };
 };

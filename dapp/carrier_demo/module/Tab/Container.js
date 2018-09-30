@@ -3,8 +3,9 @@ import Component from './Component';
 import dm from '../../data';
 
 export default util.createContainer(Component, (state)=>{
+  const unread_total = dm.method.message.getTotalUnreadNumber();
   return {
-    
+    unread_total
   };
 }, ()=>{
   return {

@@ -11,6 +11,18 @@ const DEFAULT = {
   friends : {
     all : {},
     wait : {}
+  },
+
+  message : {
+    all : {
+      // userId, type, msg, time
+    },
+    unread : [
+      // userId, num
+    ],
+      
+    
+    target : null
   }
 };
 
@@ -78,6 +90,78 @@ export const friends = (state=DEFAULT.friends, action={})=>{
           ...state.wait
         }
       }
+  }
+
+  return state;
+}
+
+const M = {
+  processUnread(state, data){
+    const {type, userId} = data;
+    const isTarget = state.target === userId;
+    const old_index = _.findIndex(state.unread, (item)=>{
+      return item.userId === userId;
+    });
+    const tmp = {
+      userId : userId
+    };
+    if(old_index === -1){
+      if(type === 'to'){
+        if(isTarget){
+          tmp.num = 0;
+        }
+        else{
+          tmp.num = 1;
+        }
+      }
+      else if(type === 'from'){
+        tmp.num = 0;
+      }
+      // state.unread.unshift(tmp);
+    }
+    else{
+      const old = state.unread.splice(old_index, 1)[0];
+
+      if(type === 'to'){
+        if(isTarget){
+          tmp.num = 0;
+        }
+        else{
+          tmp.num = old.num+1;
+        }
+      }
+      else if(type === 'from'){
+        tmp.num = 0;
+      }
+      
+    }
+    state.unread.unshift(tmp);
+    return _.clone(state.unread);
+  }
+};
+export const message = (state=DEFAULT.message, action={})=>{
+  switch(action.type){
+    case type.message['add']:
+      const userId = action.param.userId;
+      let tmp = state.all[userId];
+      if(!tmp){
+        tmp = [];
+      }
+      tmp.push(action.param);
+      state.all[userId] = tmp;
+
+      return {
+        ...state,
+        all : {
+          ...state.all
+        },
+        unread : M.processUnread(state, action.param)
+      };
+    case type.message['target']:
+      return {
+        ...state,
+        target : action.param
+      };
   }
 
   return state;
