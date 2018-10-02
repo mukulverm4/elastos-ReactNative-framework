@@ -2,6 +2,7 @@ import React from 'react';
 import BasePage from '../common/BasePage';
 import {Cache} from 'app/lib';
 import {_, Style} from 'CR';
+import InstallAppPage from 'app/module/InstallApp/Container';
 
 import { Container, Header, Content, Button, Text, Grid, Row, Col, View, Thumbnail} from 'native-base';
 
@@ -95,7 +96,9 @@ export default class extends BasePage{
   }
 
   toInstallPage(){
-    Cache.method.call('goPath', 'install_app', 'modal');
+    Cache.method.call('modal', 'open', {
+      child : InstallAppPage
+    })
   }
 
   async componentDidMount(){
