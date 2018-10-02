@@ -5,7 +5,10 @@ import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Butt
 import dm from '../../data';
 
 const sy = Style.create({
-
+  title : {
+    color : '#43af92',
+    fontWeight: 'bold'
+  }
 });
 
 const Page = class extends BasePage{
@@ -49,7 +52,7 @@ const Page = class extends BasePage{
       <List>
         {wait_list.length>0 && (
           <ListItem itemHeader first>
-            <Text>REQUEST</Text>
+            <Text style={sy.title}>REQUEST</Text>
           </ListItem>
         )}
         
@@ -75,7 +78,7 @@ const Page = class extends BasePage{
         })}
 
         <ListItem itemHeader first>
-          <Text>ONLINE</Text>
+          <Text style={sy.title}>ONLINE</Text>
         </ListItem>
         {_.map(list_online, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
@@ -92,7 +95,7 @@ const Page = class extends BasePage{
         })}
 
         <ListItem itemHeader last>
-          <Text>OFFLINE</Text>
+          <Text style={sy.title}>OFFLINE</Text>
         </ListItem>
         {_.map(list_offline, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
