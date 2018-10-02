@@ -52,6 +52,13 @@ export default {
       type : type.message['target'],
       param : userId
     }
+  },
+  message_unread(userId, num){
+    return {
+      type : type.message['unread'],
+      userId,
+      num
+    }
   }
 
 };

@@ -3,6 +3,7 @@ import Component from './Component';
 import dm from '../../data';
 
 export default util.createContainer(Component, (state, ownProps)=>{
+  console.log(state.message)
   const id = ownProps.navigation.state.params.userId;
   return {
     friends : state.friends.all,
@@ -16,7 +17,6 @@ export default util.createContainer(Component, (state, ownProps)=>{
 
     setTargetUser(userId){
       dm.dispatch(dm.action.message_target(userId));
-      
     }
   };
 });

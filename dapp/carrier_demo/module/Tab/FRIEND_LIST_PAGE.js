@@ -139,7 +139,6 @@ const Page = class extends BasePage{
 };
 
 export default util.createContainer(Page, (state)=>{
-  console.log(222, state.friends);
   return {
     friends : state.friends.all,
     wait_accept : state.friends.wait

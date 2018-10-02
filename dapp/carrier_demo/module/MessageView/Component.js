@@ -163,11 +163,16 @@ export default class extends StackPage{
   }
 
   componentDidMount(){
-    console.log(this.props.navigation)
-    
-    
-    // Remove the listener when you are done
-    // didBlurSubscription.remove();
+  
+    this.props.navigation.addListener('didBlur', (payload)=>{
+      // remove target
+      this.props.removeTarget();
+    });
+
+    this.props.navigation.addListener('didFocus', (payload)=>{
+      // remove unread
+      this.props.removeUnread(this.props.current);
+    });
   }
 
   

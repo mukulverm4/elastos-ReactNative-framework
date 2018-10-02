@@ -3,7 +3,7 @@ import BasePage from 'app/module/common/BasePage';
 import {_, Style, Cache, util, moment} from 'CR';
 import dm from '../../data';
 
-import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Button} from 'native-base';
+import { Container, View, Content, Icon, List, ListItem, Text, Left, Body, Right, Button, Badge} from 'native-base';
 
 const sy = Style.create({
   
@@ -40,9 +40,10 @@ const Page = class extends BasePage{
     const name = info.name || 'NA';
     const time = moment(data.time).format('YYYY-MM-DD HH:mm:ss');
     return (
-      <ListItem onPress={this.goto.bind(this, d.userId)} key={i} avatar>
+      <ListItem style={{position:'relative'}} onPress={this.goto.bind(this, d.userId)} key={i} avatar>
         <Left>
-          <Icon type="FontAwesome" name="user" />
+          <Icon type="FontAwesome" style={{color:'#43af92'}} name="user-circle" />
+          {d.num > 0 && <View style={{width:6,height:6,backgroundColor:'#f00',borderRadius:3, position:'absolute', right:-2, top:0}} />}
         </Left>
         <Body>
           <Text>{name}</Text>

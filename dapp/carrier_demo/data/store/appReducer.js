@@ -22,7 +22,7 @@ const DEFAULT = {
     ],
       
     
-    target : null
+    target : 'NA'
   }
 };
 
@@ -160,7 +160,20 @@ export const message = (state=DEFAULT.message, action={})=>{
     case type.message['target']:
       return {
         ...state,
-        target : action.param
+        target : action.param || 'NA'
+      };
+    case type.message['unread']:
+      const unread_list = state.unread;
+      const index = _.findIndex(unread_list, (item)=>{
+        return item.userId === action.userId;
+      });
+      if(index === -1){
+        break;
+      }
+      unread_list[index]['num'] = action.num || 0;
+      return {
+        ...state,
+        unread : _.clone(unread_list)
       };
   }
 

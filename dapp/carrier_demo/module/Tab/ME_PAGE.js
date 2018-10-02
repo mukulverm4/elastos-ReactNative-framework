@@ -121,7 +121,6 @@ const Page = class extends BasePage{
 }
 
 export default util.createContainer(Page, (state)=>{
-  console.log(state);
   return {
     me : state.me
   }

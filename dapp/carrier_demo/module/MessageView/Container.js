@@ -17,7 +17,10 @@ export default util.createContainer(Component, (state)=>{
       await dm.method.message.sendTextMessage(userId, text);
     },
     removeTarget(){
-      dm.dispatch(dm.action.message_target(''));
+      dm.dispatch(dm.action.message_target(null));
+    },
+    removeUnread(userId){
+      dm.dispatch(dm.action.message_unread(userId));
     }
   };
 });
