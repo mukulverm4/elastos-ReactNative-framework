@@ -95,7 +95,7 @@ export default class extends Parent{
 
     try{
       await this.props.changeLabel(this.props.userId, this.param.label);
-      // Cache.method.call('goPath', 'tab', 'back');
+      
       Toast.show({
         text : 'change label success',
         type : 'success'
@@ -110,6 +110,7 @@ export default class extends Parent{
 
   toSendPage(){
     this.props.setTargetUser(this.props.userId);
-    Cache.method.call('goPath', 'message_view');
+    
+    this.goPath('message_view');
   }
 }

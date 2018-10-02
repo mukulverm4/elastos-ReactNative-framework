@@ -57,13 +57,13 @@ const Page = class extends BasePage{
 
   goto(userId){
     this.props.setTargetUser(userId);
-    Cache.method.call('goPath', 'message_view');
+    this.goPath('message_view');
   }
   
 }
 
 export default util.createContainer(Page, (state)=>{
-console.log(state.message);
+
   return {
     message : state.message.all,
     unread : state.message.unread,

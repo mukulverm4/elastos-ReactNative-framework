@@ -24,7 +24,6 @@ const style = CR.Style.create({
 export default class extends React.Component{
   constructor(p){
     super(p);
-
     this.ord_init();
   }
 
@@ -108,4 +107,17 @@ export default class extends React.Component{
   }
 
   ord_init(){}
+
+  goPath(name, type='push', params={}){
+    if(!this.props.navigation){
+      throw 'this page was not under react-navigation, please check.';
+    }
+    if(!this.props.navigation[type]){
+      throw 'invalid type : '+type;
+    }
+    this.props.navigation[type](name, params);
+  }
+  goBack(){
+    this.goPath(null, 'pop');
+  }
 }

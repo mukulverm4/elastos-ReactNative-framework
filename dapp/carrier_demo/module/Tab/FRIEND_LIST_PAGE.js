@@ -112,14 +112,13 @@ const Page = class extends BasePage{
   }
 
   addFriend(){
-    Cache.method.call('goPath', 'add_friend');
+    this.goPath('add_friend');
   }
 
   gotoInfo(id){
-    Cache.method.call('goPath', 'friend_info', 'navigate', {
-      params : {
-        userId : id
-      }
+
+    this.goPath('friend_info', 'push', {
+      userId : id
     });
   }
 

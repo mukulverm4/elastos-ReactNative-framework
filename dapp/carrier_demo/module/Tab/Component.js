@@ -14,17 +14,20 @@ const sy = Style.create({
 
 export default class extends BasePage{
   ord_renderMain(){
+    const p = {
+      navigation : this.props.navigation
+    };
     return (
       <Container>
         <Tabs tabBarPosition="bottom">
           <Tab heading={this.getChatHeader()}>
-            <CHAT_LIST_PAGE />
+            <CHAT_LIST_PAGE {...p} />
           </Tab>
           <Tab heading="FRIENDS">
-            <FRIEND_LIST_PAGE />
+            <FRIEND_LIST_PAGE {...p} />
           </Tab>
           <Tab heading="ME">
-            <ME_PAGE />
+            <ME_PAGE {...p} />
           </Tab>
         </Tabs>
       </Container>

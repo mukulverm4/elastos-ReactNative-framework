@@ -1,6 +1,5 @@
 import React from 'react';
 import {Icon, Button} from 'native-base';
-import {Cache} from 'app/lib';
 import BasePage from './BasePage';
 
 export default class extends BasePage{
@@ -11,9 +10,5 @@ export default class extends BasePage{
         <Icon type="FontAwesome" name='angle-left' />
       </Button>
     );
-  }
-
-  goBack(){
-    Cache.method.call('goPath', null, 'back');
   }
 };

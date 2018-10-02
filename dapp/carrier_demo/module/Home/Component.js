@@ -43,7 +43,7 @@ export default class extends BasePage{
 
     _.delay(()=>{
       this.setState({loading : false});
-      Cache.method.call('goPath', 'tab', 'reset');
+      this.goPath('tab', 'replace');
     }, 10);
     
     

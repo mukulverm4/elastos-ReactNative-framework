@@ -45,7 +45,7 @@ const Page = class extends BasePage{
   }
 
   toEditPage(){
-    Cache.method.call('goPath', 'profile_edit');
+    this.goPath('profile_edit')
   }
 
   renderProfileInfo(){

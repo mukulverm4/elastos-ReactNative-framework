@@ -68,7 +68,7 @@ export default class extends StackPage{
     this.setState({loading : true});
     await this.props.changeProfile(this.param);
     this.setState({loading : false});
-    Cache.method.call('goPath', 'tab', 'back')
+    this.goBack();
   }
 
   ord_defineHeaderTitle(){
