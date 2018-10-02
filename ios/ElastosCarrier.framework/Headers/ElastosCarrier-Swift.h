@@ -390,25 +390,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger MAX_APP_ME
 /// the fragments.
 /// \param target The target id
 ///
-/// \param msg The message content defined by application in string type.
+/// \param msg The message content defined by application
 ///
 ///
 /// throws:
 /// CarrierError
 - (BOOL)sendFriendMessageTo:(NSString * _Nonnull)target withMessage:(NSString * _Nonnull)msg error:(NSError * _Nullable * _Nullable)error;
-/// Send a message to the specified friend.
-/// The message length may not exceed <code>MAX_APP_MESSAGE_LEN</code>, and message
-/// itself should be text-formatted. Larger messages must be splitted by
-/// application and sent as separate messages. Other nodes can reassemble
-/// the fragments.
-/// \param target The target id
-///
-/// \param msg The message content defined by application in Data type.
-///
-///
-/// throws:
-/// CarrierError
-- (BOOL)sendFriendMessageTo:(NSString * _Nonnull)target withData:(NSData * _Nonnull)data error:(NSError * _Nullable * _Nullable)error;
 /// Send invite request to the specified friend
 /// Application can attach the application defined data with in the invite
 /// request, and the data will send to target friend.
@@ -610,7 +597,7 @@ SWIFT_PROTOCOL_NAMED("CarrierDelegate")
 ///
 /// returns:
 /// Void
-- (void)carrier:(ELACarrier * _Nonnull)carrier didReceiveFriendMessage:(NSString * _Nonnull)from withMessage:(NSData * _Nonnull)message;
+- (void)carrier:(ELACarrier * _Nonnull)carrier didReceiveFriendMessage:(NSString * _Nonnull)from withMessage:(NSString * _Nonnull)message;
 /// Tell the delegate that an friend invite request has been received.
 /// \param carrier Carrier node instance
 ///
