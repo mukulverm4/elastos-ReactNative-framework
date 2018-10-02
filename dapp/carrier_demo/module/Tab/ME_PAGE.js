@@ -15,6 +15,11 @@ const sy = Style.create({
     fontSize : 14
   },
 
+  title : {
+    color : '#43af92',
+    fontWeight: 'bold'
+  },
+
   qr_box: {
     paddingLeft : 15,
     paddingRight : 15,
@@ -60,11 +65,11 @@ const Page = class extends BasePage{
       <Content>
         <List>
           <ListItem itemHeader first>
-            <Text>PROFILE</Text>
+            <Text style={sy.title}>PROFILE</Text>
           </ListItem>
           {this.renderProfileInfo()}
           <ListItem itemHeader>
-            <Text>BASE</Text>
+            <Text style={sy.title}>BASE</Text>
           </ListItem>
           {this.renderBaseInfo()}
         </List>
