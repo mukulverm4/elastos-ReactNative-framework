@@ -1,11 +1,13 @@
-import {_} from 'CR';
+import {_, plugin} from 'CR';
 
+
+const {Carrier} = plugin;
 export default (dm)=>{
   return {
     async sendTextMessage(userId, message){
       const carrier = dm.method.getCarrier();
       const f_info = await carrier.getFriendInfo(userId);
-      if(f_info.status !== '0'){
+      if(f_info.status !== Carrier.config.CONNECTION_STATUS.CONNECTED){
         throw 'target is offline';
       }
 

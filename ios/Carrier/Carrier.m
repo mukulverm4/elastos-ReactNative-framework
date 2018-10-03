@@ -138,7 +138,7 @@
   NSDictionary *param = @{
                           @"type" : @"connectionStatusDidChange",
                           @"data" : @{
-                              @"newStatus" : [NSString stringWithFormat:@"%ld", newStatus]
+                              @"newStatus" : [NSNumber numberWithInt:newStatus]
                               }
                           };
   _callback(carrier, param);
@@ -192,7 +192,7 @@
                           @"type" : @"friendConnectionDidChange",
                           @"data" : @{
                               @"friendId" : friendId,
-                              @"status" : [NSString stringWithFormat:@"%ld", newStatus]
+                              @"status" : [NSNumber numberWithInt:newStatus]
                               }
                           };
   _callback(carrier, param);
@@ -204,7 +204,7 @@
                           @"type" : @"friendPresenceDidChange",
                           @"data" : @{
                               @"friendId" : friendId,
-                              @"presence" : [NSString stringWithFormat:@"%ld", newPresence]
+                              @"presence" : [NSNumber numberWithInt:newPresence]
                               }
                           };
   _callback(carrier, param);

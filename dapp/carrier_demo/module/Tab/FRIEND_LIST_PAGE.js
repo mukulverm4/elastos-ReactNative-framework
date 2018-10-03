@@ -1,9 +1,10 @@
 import React from 'react';
 import BasePage from 'app/module/common/BasePage';
-import {_, Style, Cache, util} from 'CR';
+import {_, Style, Cache, util, plugin} from 'CR';
 import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Button, Toast} from 'native-base';
 import dm from '../../data';
 
+const Carrier = plugin.Carrier;
 const sy = Style.create({
   title : {
     color : '#43af92',
@@ -42,10 +43,10 @@ const Page = class extends BasePage{
   renderFriendList(){
     const list = _.values(this.props.friends);
     const list_online = _.filter(list, (item)=>{
-      return item.status === '0';
+      return item.status === Carrier.config.CONNECTION_STATUS.CONNECTED;
     });
     const list_offline = _.filter(list, (item)=>{
-      return item.status === '1';
+      return item.status === Carrier.config.CONNECTION_STATUS.DISCONNECTED;
     });
     const wait_list = _.values(this.props.wait_accept);
     return (
@@ -88,7 +89,11 @@ const Page = class extends BasePage{
                 <Text>{item.name || 'NA'}{label}</Text>
               </Left>
               <Right>
-                <Icon name="arrow-forward" />
+                <Text style={{color:'#ccc'}}>
+                  {this.props.getPresenceString(item.presence)}
+                  
+                </Text>
+                {/* <Icon name="arrow-forward" /> */}
               </Right>
             </ListItem>
           )
@@ -146,4 +151,10 @@ export default util.createContainer(Page, (state)=>{
     friends : state.friends.all,
     wait_accept : state.friends.wait
   };
+}, ()=>{
+  return {
+    getPresenceString(presence){
+      return ['free', 'away', 'busy'][presence];
+    }
+  }
 })

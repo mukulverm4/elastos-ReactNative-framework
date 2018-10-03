@@ -276,6 +276,23 @@ RCT_EXPORT_METHOD
   callback(@[NULL_ERR, list]);
 }
 
+RCT_EXPORT_METHOD
+(setSelfPresence : (NSString *)cid :(ELACarrierPresenceStatus)presence :(RCTResponseSenderBlock)callback){
+  if(![self checkCarrierInstance:cid cb:callback]){
+    return;
+  }
+  ELACarrier *elaCarrier = [self getELACarrier:cid];
+  NSError *error = nil;
+  BOOL flag = [elaCarrier setSelfPresence:presence error:&error];
+  
+  if(!flag){
+    callback(@[[self create_error:error]]);
+  }
+  else{
+    callback(@[NULL_ERR, OK]);
+  }
+}
+
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;
   CarrierSendEvent sendEvent = ^(ELACarrier *carrier, NSDictionary* param){
@@ -414,8 +431,8 @@ RCT_EXPORT_METHOD
   NSDictionary *dic = [self user_info:info];
   NSMutableDictionary *rs = [NSMutableDictionary dictionaryWithDictionary:dic];
   [rs setObject:info.label forKey:@"label"];
-  [rs setObject:[NSString stringWithFormat:@"%ld", info.presence] forKey:@"presence"];
-  [rs setObject:[NSString stringWithFormat:@"%ld", info.status] forKey:@"status"];
+  [rs setObject:[NSNumber numberWithInt: info.presence] forKey:@"presence"];
+  [rs setObject:[NSNumber numberWithInt: info.status] forKey:@"status"];
   
   return rs;
 }
