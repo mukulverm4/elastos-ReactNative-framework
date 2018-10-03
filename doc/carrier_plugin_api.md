@@ -155,6 +155,9 @@ await carrier.sendMessage('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV', 'hello
 * remove carrier node file from device. that means the node will be gone.
 
 
+## Notice
+* only available for x86_84 for now.
+
 ## Carrier Session will be coming soon.
 
 ## to be continue.
