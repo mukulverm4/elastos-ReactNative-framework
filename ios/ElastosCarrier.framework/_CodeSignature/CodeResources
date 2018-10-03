@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/ElastosCarrier-Swift.h</key>
 		<data>
-		lCHwMachF5Y2xNjbyBQSXTFe/zA=
+		Cx8yafKch/wF9ksT3bnTBHyWxyQ=
 		</data>
 		<key>Headers/ElastosCarrier.h</key>
 		<data>
@@ -14,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AtOieFgkWAZZsufwM6eHOovv9rk=
+		IUq8OqBnhtzd39PNCR5ztmAiv3E=
 		</data>
 		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		PvRb0P5oFPKlfVCMY/d8cEr7uAA=
+		DNL8ttlqPqwuqcfqjtW4+wzVwVk=
 		</data>
 		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		vzOvUc1dc4jkCYlw6MDYVIPtZPQ=
+		Yq+3x0PFF8Gz5vAFiSwiXAskgLI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lCHwMachF5Y2xNjbyBQSXTFe/zA=
+			Cx8yafKch/wF9ksT3bnTBHyWxyQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			gk74dRx/alHpMoPxywQU5D83s70KgXCDADYPHz7EJUs=
+			g1SsbZzvthbjsb33k6BtSJ823qLqPa4/fuR91qmwdBM=
 			</data>
 		</dict>
 		<key>Headers/ElastosCarrier.h</key>
@@ -57,22 +57,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PvRb0P5oFPKlfVCMY/d8cEr7uAA=
+			DNL8ttlqPqwuqcfqjtW4+wzVwVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			EU/Xt46ktyQGSPH1nrY1bu/OLSyQTm6cex1abfipbx0=
+			YqxYcXE9d0r3uwu5FVTS8XXaJjz8dw9s0UiXd+3JNIg=
 			</data>
 		</dict>
 		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vzOvUc1dc4jkCYlw6MDYVIPtZPQ=
+			Yq+3x0PFF8Gz5vAFiSwiXAskgLI=
 			</data>
 			<key>hash2</key>
 			<data>
-			HDz7pCZGnWFyV9pRRsP9VxVe73zEaWLzp2NtqIlGm1o=
+			AFHSsi4TPIdzVfQCAcYCKhA+QMs758i4c17TV6nnueM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
