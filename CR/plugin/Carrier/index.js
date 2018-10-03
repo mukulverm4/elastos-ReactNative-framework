@@ -24,7 +24,7 @@ const STREAM_CB_NAMES = [
 const exec = async (fnName, ...args)=>{
   return new Promise((resolve, reject)=>{
     NativeCarrier[fnName](...args, (err, rs)=>{
-      console.log('exec===>', err, rs);
+      console.log('exec ['+fnName+'] ===>', err, rs);
       if(err){
         reject(err);
       }
@@ -92,6 +92,9 @@ const Carrier = class {
       region : ''
     }, info);
     return exec('setSelfInfo', this.id, user_info);
+  }
+  setSelfPresence(presence){
+    return exec('setSelfPresence', this.id, presence);
   }
 
   addFriend(address, msg){

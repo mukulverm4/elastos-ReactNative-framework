@@ -1,11 +1,15 @@
 import React from 'react';
 import BasePage from 'app/module/common/BasePage';
-import {_, Style, Cache, util} from 'CR';
+import {_, Style, Cache, util, plugin} from 'CR';
 import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Button, Toast} from 'native-base';
 import dm from '../../data';
 
+const Carrier = plugin.Carrier;
 const sy = Style.create({
-
+  title : {
+    color : '#43af92',
+    fontWeight: 'bold'
+  }
 });
 
 const Page = class extends BasePage{
@@ -39,17 +43,17 @@ const Page = class extends BasePage{
   renderFriendList(){
     const list = _.values(this.props.friends);
     const list_online = _.filter(list, (item)=>{
-      return item.status === '0';
+      return item.status === Carrier.config.CONNECTION_STATUS.CONNECTED;
     });
     const list_offline = _.filter(list, (item)=>{
-      return item.status === '1';
+      return item.status === Carrier.config.CONNECTION_STATUS.DISCONNECTED;
     });
     const wait_list = _.values(this.props.wait_accept);
     return (
       <List>
         {wait_list.length>0 && (
           <ListItem itemHeader first>
-            <Text>REQUEST</Text>
+            <Text style={sy.title}>REQUEST</Text>
           </ListItem>
         )}
         
@@ -75,7 +79,7 @@ const Page = class extends BasePage{
         })}
 
         <ListItem itemHeader first>
-          <Text>ONLINE</Text>
+          <Text style={sy.title}>ONLINE</Text>
         </ListItem>
         {_.map(list_online, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
@@ -85,14 +89,18 @@ const Page = class extends BasePage{
                 <Text>{item.name || 'NA'}{label}</Text>
               </Left>
               <Right>
-                <Icon name="arrow-forward" />
+                <Text style={{color:'#ccc'}}>
+                  {this.props.getPresenceString(item.presence)}
+                  
+                </Text>
+                {/* <Icon name="arrow-forward" /> */}
               </Right>
             </ListItem>
           )
         })}
 
         <ListItem itemHeader last>
-          <Text>OFFLINE</Text>
+          <Text style={sy.title}>OFFLINE</Text>
         </ListItem>
         {_.map(list_offline, (item, i)=>{
           const label = item.label ? ` [${item.label}]` : null
@@ -143,4 +151,10 @@ export default util.createContainer(Page, (state)=>{
     friends : state.friends.all,
     wait_accept : state.friends.wait
   };
+}, ()=>{
+  return {
+    getPresenceString(presence){
+      return ['free', 'away', 'busy'][presence];
+    }
+  }
 })

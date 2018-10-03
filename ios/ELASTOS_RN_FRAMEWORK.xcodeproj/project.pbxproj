@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -41,6 +42,7 @@
 		394123E1215B701F005D69C4 /* ElastosCarrier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */; };
 		394123E2215B701F005D69C4 /* ElastosCarrier.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		394123E6215BB30B005D69C4 /* CarrierPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 394123E5215BB30B005D69C4 /* CarrierPlugin.m */; };
+		3941248A2163A6F7005D69C4 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 394124892163A68E005D69C4 /* libRNCamera.a */; };
 		39A8D4EA214BE62F00819ED6 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D4E9214BE62F00819ED6 /* Test.m */; };
 		39A8D52B214CE8B100819ED6 /* RCTAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D52A214CE8B100819ED6 /* RCTAssetManager.m */; };
 		39A8D5522150D64400819ED6 /* RCTStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8D5512150D64400819ED6 /* RCTStoreManager.m */; };
@@ -208,6 +210,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 9936F32F1F5F2E5B0010BF04;
 			remoteInfo = "privatedata-tvOS";
+		};
+		394124882163A68E005D69C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3941245F2163A68D005D69C4 /* RNCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
+			remoteInfo = RNCamera;
 		};
 		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -383,6 +392,7 @@
 		394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ElastosCarrier.framework; sourceTree = "<group>"; };
 		394123E4215BB30B005D69C4 /* CarrierPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarrierPlugin.h; sourceTree = "<group>"; };
 		394123E5215BB30B005D69C4 /* CarrierPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarrierPlugin.m; sourceTree = "<group>"; };
+		3941245F2163A68D005D69C4 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		39A8D4C3214BE62F00819ED6 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		39A8D4E9214BE62F00819ED6 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		39A8D529214CE8B100819ED6 /* RCTAssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTAssetManager.h; sourceTree = "<group>"; };
@@ -422,6 +432,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3941248A2163A6F7005D69C4 /* libRNCamera.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -609,6 +620,14 @@
 			path = Carrier;
 			sourceTree = "<group>";
 		};
+		394124602163A68D005D69C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				394124892163A68E005D69C4 /* libRNCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		39A8D503214CE88000819ED6 /* AppManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +669,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				3941245F2163A68D005D69C4 /* RNCamera.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -896,6 +916,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 394124602163A68D005D69C4 /* Products */;
+					ProjectRef = 3941245F2163A68D005D69C4 /* RNCamera.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1039,6 +1063,13 @@
 			fileType = archive.ar;
 			path = "libprivatedata-tvOS.a";
 			remoteRef = 2DF0FFEC2056DD460020B375 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		394124892163A68E005D69C4 /* libRNCamera.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCamera.a;
+			remoteRef = 394124882163A68E005D69C4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {

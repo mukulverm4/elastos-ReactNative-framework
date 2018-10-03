@@ -1,6 +1,7 @@
 import React from 'react';
 import Parent from 'app/module/common/StackPage';
-import {_, Style, Cache} from 'CR';
+import ModalPage from 'app/module/common/ModalPage';
+import {_, Style, Cache, plugin} from 'CR';
 
 import { Container, View, Content, Button, Text, Form, Item, Label, Input, Toast} from 'native-base';
 
@@ -8,11 +9,49 @@ const sy = Style.create({
   btn: {},
 });
 
+const RNCamera = plugin.RNCamera;
+const ScanPage = class extends ModalPage{
+  ord_init(){
+    this.camera = null;
+  }
+  ord_defineHeaderTitle(){
+    return 'SCAN'
+  }
+  ord_renderMain(){
+    const p = {
+      ref : (ref)=>{this.camera = ref;},
+      style : {},
+      type : RNCamera.Constants.Type.back,
+      flashMode : RNCamera.Constants.FlashMode.auto,
+      permissionDialogTitle : 'Permission to use camera',
+      permissionDialogMessage : 'We need your permission to use your camera phone',
+      onBarCodeRead : (barcode)=>{
+        console.log(111, barcode);
+      },
+      barCodeTypes : [RNCamera.Constants.BarCodeType.qr]
+    };
+    return (
+      <Container>
+        <RNCamera {...p} />
+        {/* <View style={{paddingLeft:15, paddingRight:15, marginTop:40}}>
+          <Button style={sy.btn} success block onPress={this.scan.bind(this)}>
+            <Text>Confirm</Text>
+          </Button>
+        </View> */}
+      </Container>
+    );
+  }
+
+  async scan(){
+
+  }
+};
+
 export default class extends Parent{
 
   ord_init(){
     this.param = {
-      address : '7c6j4w1Mc7XtabuQzb11axb8dNTbCbsSwyWLMbTsHAGEzfBYiTfz',
+      address : '',
       message : 'hey, friend'
     };
 
@@ -99,6 +138,20 @@ export default class extends Parent{
 
   ord_defineHeaderTitle(){
     return 'EDIT PROFILE';
+  }
+
+  ord_renderHeaderRight(){
+    return (
+      <Button key="1" transparent onPress={this.openScanView.bind(this)}>
+        {/* <Text style={{color:'#fff'}}>SCAN</Text> */}
+      </Button>
+    );
+  }
+
+  openScanView(){
+    Cache.method.call('modal', 'open', {
+      child : ScanPage
+    });
   }
 
 }

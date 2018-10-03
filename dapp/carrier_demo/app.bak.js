@@ -147,7 +147,7 @@ class App extends Component{
         this.setLog('carrier is ready');
       },
       onConnection : (status)=>{
-        this.setLog('carrier connection status : '+Carrier.config.CONNECTION_STATUS[status]);
+        this.setLog('carrier connection status : '+status);
       },
       onFriends : (list)=>{
         this.setLog('carrier connection status : '+JSON.stringify(list));

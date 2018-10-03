@@ -1,9 +1,11 @@
 import React from 'react';
 import BasePage from 'app/module/common/BasePage';
-import {_, Style, Cache, util} from 'CR';
-
+import ModalPage from 'app/module/common/ModalPage';
+import {_, Style, Cache, util, plugin} from 'CR';
+import {Dimensions, Clipboard} from 'react-native';
 import { Container, Content, Icon, List, ListItem, Text, Left, Body, Right, Button} from 'native-base';
 
+const QRCode = plugin.QRCode;
 const sy = Style.create({
   t1 : {
     paddingLeft : 15,
@@ -11,8 +13,51 @@ const sy = Style.create({
     marginTop : 10,
     marginBottom : 10,
     fontSize : 14
+  },
+
+  title : {
+    color : '#43af92',
+    fontWeight: 'bold'
+  },
+
+  qr_box: {
+    paddingLeft : 15,
+    paddingRight : 15,
+    paddingTop : 40
+  },
+  qr_btn: {
+    marginTop : 40
   }
 });
+
+const AddressView = class extends ModalPage{
+  ord_renderMain(){
+    const size = Dimensions.get('window').width - 30;
+    const value = this.props.value;
+    const p = {
+      value,
+      style : sy.qrcode,
+      size,
+      bgColor : '#43af92'
+    };
+    return (
+      <Container style={sy.qr_box}>
+        <QRCode {...p} />
+
+        <Button style={sy.qr_btn} success block onPress={this.copyQrcode.bind(this, value)}>
+          <Text>Copy Address</Text>
+        </Button>
+      </Container>
+    );
+  }
+  async copyQrcode(code){
+    await Clipboard.setString(code);
+    alert('copy qrcode');
+  }
+  ord_defineHeaderTitle(){
+    return "QR Code"
+  }
+};
 
 const Page = class extends BasePage{
   ord_renderMain(){
@@ -20,11 +65,11 @@ const Page = class extends BasePage{
       <Content>
         <List>
           <ListItem itemHeader first>
-            <Text>PROFILE</Text>
+            <Text style={sy.title}>PROFILE</Text>
           </ListItem>
           {this.renderProfileInfo()}
           <ListItem itemHeader>
-            <Text>BASE</Text>
+            <Text style={sy.title}>BASE</Text>
           </ListItem>
           {this.renderBaseInfo()}
         </List>
@@ -93,7 +138,16 @@ const Page = class extends BasePage{
         key : 'Address', 
         value : address ? address.substr(0, 15) : '',
         click : address ? ()=>{
-          alert(address);
+          if(address){
+            Cache.method.call('modal', 'open', {
+              child : AddressView,
+              prop : {
+                value : address
+              }
+            });
+          }
+          
+          
         } : null
       },
       

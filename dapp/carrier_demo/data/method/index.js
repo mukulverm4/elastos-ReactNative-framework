@@ -17,13 +17,13 @@ const F = {
       },
       onConnection : async (status)=>{
         const profile = await _carrier.getSelfInfo();
-        if(status === '0'){
+        if(status === Carrier.config.CONNECTION_STATUS.CONNECTED){
           dm.dispatch(dm.action.me_set({
             online : true,
             profile
           }));
         }
-        else if(status === '1'){
+        else if(status === Carrier.config.CONNECTION_STATUS.DISCONNECTED){
           dm.dispatch(dm.action.me_set({
             online : false
           }));
@@ -56,6 +56,14 @@ const F = {
         const param = {};
         param[data.friendId] = {
           status : data.status
+        };
+
+        dm.dispatch(dm.action.friends_all_set(param));
+      },
+      onFriendPresence : (data)=>{
+        const param = {};
+        param[data.friendId] = {
+          presence : data.presence
         };
 
         dm.dispatch(dm.action.friends_all_set(param));
