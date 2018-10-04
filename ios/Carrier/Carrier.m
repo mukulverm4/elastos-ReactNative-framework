@@ -15,6 +15,9 @@
   BOOL _init;
   ELACarrierConnectionStatus connectStatus;
   ELACarrier *elaCarrier;
+  
+  ELACarrierSessionManager *elaSessionManager;
+  
   dispatch_queue_t managerCarrierQueue;
   CarrierSendEvent _callback;
 }
@@ -25,6 +28,10 @@
 -(ELACarrier *) getIntance{
   return elaCarrier;
 }
+
+//-(ELACarrierSession *) getSessionInstance{
+//  return _session;
+//}
 
 - (instancetype)init {
   if (self = [super init]) {
@@ -131,6 +138,44 @@
   connectStatus = ELACarrierConnectionStatusDisconnected;
 }
 
+-(ELACarrierSession *) createNewSession: (NSString *)name friendId:(NSString *)friendId{
+
+  NSError *error = nil;
+  ELACarrierSession *session = [elaSessionManager newSessionTo:friendId error:&error];
+  
+  ELACarrierStreamOptions options = ELACarrierStreamOptionMultiplexing | ELACarrierStreamOptionPortForwarding | ELACarrierStreamOptionReliable;
+  
+//  NSError *error = nil;
+  ELACarrierStream *stream = [session addStreamWithType:ELACarrierStreamTypeApplication options:options delegate:self error:&error];
+  
+  return session;
+}
+
+
+#pragma mark - ELACarrierStreamDelegate
+-(void) carrierStream:(ELACarrierStream *)stream stateDidChange:(enum ELACarrierStreamState)newState{
+  RCTLog(@"Stream state: %d", (int)newState);
+  
+  switch (newState) {
+    case ELACarrierStreamStateInitialized:
+ 
+      break;
+      
+    case ELACarrierStreamStateConnected:
+
+      break;
+      
+    case ELACarrierStreamStateDeactivated:
+    case ELACarrierStreamStateClosed:
+    case ELACarrierStreamStateError:
+     
+      break;
+      
+    default:
+      break;
+  }
+}
+
 #pragma mark - ELACarrierDelegate
 -(void) carrier:(ELACarrier *)carrier connectionStatusDidChange:(enum ELACarrierConnectionStatus)newStatus{
   RCTLog(@"connectionStatusDidChange : %d", (int)newStatus);
@@ -146,6 +191,9 @@
 
 -(void) carrierDidBecomeReady:(ELACarrier *)carrier{
   RCTLog(@"didBecomeReady");
+  
+  elaSessionManager = [ELACarrierSessionManager getInstance:carrier error:nil];
+  
   NSDictionary *param = @{
                           @"type" : @"carrierDidBecomeReady"
                           };

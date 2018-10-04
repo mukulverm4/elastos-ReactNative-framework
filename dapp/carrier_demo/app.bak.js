@@ -26,7 +26,7 @@ class App extends Component{
         <Text style={styles.error}>{this.state.error}</Text>
 
         <Content>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
+          {/* <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getVersion')}>
             <Text>getVersion</Text>
           </Button>
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'isValidAddress')}>
@@ -40,11 +40,11 @@ class App extends Component{
           </Button>
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getSelfInfo')}>
             <Text>getSelfInfo</Text>
-          </Button>
+          </Button> */}
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'addFriend')}>
             <Text>addFriend</Text>
           </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'acceptFriend')}>
+          {/* <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'acceptFriend')}>
             <Text>acceptFriend</Text>
           </Button>
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getFriendInfo')}>
@@ -55,6 +55,9 @@ class App extends Component{
           </Button>
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'close')}>
             <Text>close</Text>
+          </Button> */}
+          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'createSession')}>
+            <Text>createSession</Text>
           </Button>
         </Content>
         
@@ -93,7 +96,7 @@ class App extends Component{
         break;
       case 'addFriend':
         try{
-          rs = await this.carrier.addFriend('Dg3h2TecXGzBU5NruvdYaMJoCdxGc3etPmJ6GVynKpLUm1whnQyE', 'hello');
+          rs = await this.carrier.addFriend('NoUuS3758MmRB4uF7ujCBe677j1PJrW1gc3yMHm7X68XPRJTQWaB', 'hello');
           console.log(rs);
         }catch(e){
           this.setError(e);
@@ -108,7 +111,7 @@ class App extends Component{
         break;
       case 'getFriendInfo':
         try{
-          tmp = await this.carrier.getFriendInfo('4ni3UKYY9xHDcodNaP1edAWDGuF5cmWTU8QWH4JnNfwV');
+          tmp = await this.carrier.getFriendInfo('AvJZg8RkwVksMZwoYad9dMCzBuutJJQoqf9dACU9yJQz');
           rs = JSON.stringify(tmp);
         }catch(e){
           this.setError(e);
@@ -124,6 +127,10 @@ class App extends Component{
         break;
       case 'close':
         rs = await this.carrier.close();
+        break;
+      case 'createSession':
+        await this.carrier.createSession('AvJZg8RkwVksMZwoYad9dMCzBuutJJQoqf9dACU9yJQz');
+        rs = 'ok';
         break;
     }
     if(rs || _.isString(rs)){

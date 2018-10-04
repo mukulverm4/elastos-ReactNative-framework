@@ -126,6 +126,10 @@ const Carrier = class {
     return exec('clean', this.id);
   }
 
+  createSession(friendId){
+    return exec('createSession', this.id, friendId);
+  }
+
   
 
   
