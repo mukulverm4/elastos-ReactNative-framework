@@ -46,11 +46,11 @@ class App extends Component{
           </Button>
           {/* <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'acceptFriend')}>
             <Text>acceptFriend</Text>
-          </Button>
+          </Button> */}
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'getFriendInfo')}>
             <Text>getFriendInfo</Text>
           </Button>
-          <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'sendMessage')}>
+          {/* <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'sendMessage')}>
             <Text>sendMessage</Text>
           </Button>
           <Button style={styles.btn} success block onPress={this.testFn.bind(this, 'close')}>
@@ -96,7 +96,7 @@ class App extends Component{
         break;
       case 'addFriend':
         try{
-          rs = await this.carrier.addFriend('NoUuS3758MmRB4uF7ujCBe677j1PJrW1gc3yMHm7X68XPRJTQWaB', 'hello');
+          rs = await this.carrier.addFriend('DAQb3hTPLiaeLjhLyHvHK4ebJ8PcAvJUewwtxCQmbgZLVaQdLkjc', 'hello');
           console.log(rs);
         }catch(e){
           this.setError(e);
@@ -111,7 +111,7 @@ class App extends Component{
         break;
       case 'getFriendInfo':
         try{
-          tmp = await this.carrier.getFriendInfo('AvJZg8RkwVksMZwoYad9dMCzBuutJJQoqf9dACU9yJQz');
+          tmp = await this.carrier.getFriendInfo('6XwWqntxZFwa6XmAtSmJLNZbrL9VwbsMr8GDMxKAUPmy');
           rs = JSON.stringify(tmp);
         }catch(e){
           this.setError(e);
@@ -129,7 +129,7 @@ class App extends Component{
         rs = await this.carrier.close();
         break;
       case 'createSession':
-        await this.carrier.createSession('AvJZg8RkwVksMZwoYad9dMCzBuutJJQoqf9dACU9yJQz');
+        await this.carrier.createSession('6XwWqntxZFwa6XmAtSmJLNZbrL9VwbsMr8GDMxKAUPmy');
         rs = 'ok';
         break;
     }

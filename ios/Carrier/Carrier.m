@@ -17,6 +17,7 @@
   ELACarrier *elaCarrier;
   
   ELACarrierSessionManager *elaSessionManager;
+  ELACarrierStream *_stream;
   
   dispatch_queue_t managerCarrierQueue;
   CarrierSendEvent _callback;
@@ -143,12 +144,28 @@
   
   NSError *error = nil;
   ELACarrierSession *session = [elaSessionManager newSessionTo:friendId error:&error];
-  
+//  NSString *peer = [session getPeer];
+//  RCTLog(@"%@", peer);
   ELACarrierStreamOptions options = ELACarrierStreamOptionReliable;
 //  ELACarrierStreamOptionMultiplexing | ELACarrierStreamOptionPortForwarding | ELACarrierStreamOptionReliable;
   
 //  NSError *error = nil;
-  ELACarrierStream *stream = [session addStreamWithType:ELACarrierStreamTypeApplication options:options delegate:self error:&error];
+   _stream = [session addStreamWithType:ELACarrierStreamTypeApplication options:options delegate:(id)self error:&error];
+  
+//  [session sendInviteRequestWithResponseHandler:
+//   ^(ELACarrierSession *session, NSInteger status, NSString *reason, NSString *sdp) {
+//     RCTLog(@"Invite request response, stream state: %zd", status);
+//
+//     if (status == 0) {
+//       NSError *error = nil;
+//       if (![session startWithRemoteSdp:sdp error:&error]) {
+//         RCTLog(@"Start session error: %@", error);
+//       }
+//     }
+//     else {
+//       RCTLog(@"Remote refused session invite: %d, sdp: %@", (int)status, reason);
+//     }
+//   } error:&error];
   
   return session;
 }
@@ -193,6 +210,7 @@
 
 -(void) carrierDidBecomeReady:(ELACarrier *)carrier{
   RCTLog(@"didBecomeReady");
+  
   NSDictionary *param = @{
                           @"type" : @"carrierDidBecomeReady"
                           };
