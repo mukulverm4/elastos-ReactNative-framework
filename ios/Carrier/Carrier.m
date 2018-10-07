@@ -139,11 +139,13 @@
 }
 
 -(ELACarrierSession *) createNewSession: (NSString *)name friendId:(NSString *)friendId{
-
+  elaSessionManager = [ELACarrierSessionManager getInstance:[self getIntance] error:nil];
+  
   NSError *error = nil;
   ELACarrierSession *session = [elaSessionManager newSessionTo:friendId error:&error];
   
-  ELACarrierStreamOptions options = ELACarrierStreamOptionMultiplexing | ELACarrierStreamOptionPortForwarding | ELACarrierStreamOptionReliable;
+  ELACarrierStreamOptions options = ELACarrierStreamOptionReliable;
+//  ELACarrierStreamOptionMultiplexing | ELACarrierStreamOptionPortForwarding | ELACarrierStreamOptionReliable;
   
 //  NSError *error = nil;
   ELACarrierStream *stream = [session addStreamWithType:ELACarrierStreamTypeApplication options:options delegate:self error:&error];
@@ -191,9 +193,6 @@
 
 -(void) carrierDidBecomeReady:(ELACarrier *)carrier{
   RCTLog(@"didBecomeReady");
-  
-  elaSessionManager = [ELACarrierSessionManager getInstance:carrier error:nil];
-  
   NSDictionary *param = @{
                           @"type" : @"carrierDidBecomeReady"
                           };
