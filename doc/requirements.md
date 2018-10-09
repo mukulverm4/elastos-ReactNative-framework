@@ -8,14 +8,14 @@
 
 ### Alpha Version Deliverables(End of November)
 - High Priority: Write a plugin for react native(for ios) for interacting with elastos carrier
-- High Priority: Write a plugin for react native(for ios) for interacting with wallet SDK
-- High Priority: Write a plugin for react native(for ios) for interacting with DID sidechain
+- High Priority: Write a plugin for react native(for android) for interacting with wallet SDK
+- High Priority: Write a plugin for react native(for android) for interacting with DID sidechain
 - Create sample DApps based on the above 3 plugins to showcase them in action
 - Write tests for every new feature or functionality added
 - Write the documentation along with the APIs available
-- Put in continuous integration and automated builds
-- Repeat the above process but targetting android platform this time as well
-- Create npm package that developers can download to easily integrate elastos services(carrier, wallet and DID) onto their React Native app development
+- Write a plugin for react native(for android) for interacting with elastos carrier
+- Write a plugin for react native(for ios) for interacting with wallet SDK
+- Write a plugin for react native(for ios) for interacting with DID sidechain
 
 ### Beta Version Ideas/Deliverables
 - Medium Priority: RN framework needs to disable http/https and only allow traffic via elastos carrier. At first, we may allow http/https but the final version should have it completely disabled same as trinity browser 
@@ -28,3 +28,5 @@
 - There are only a limited number of API calls available from this react native framework. This will create a virtual machine of sorts same as how Trinity browser works
 - When a DApp is imported, the DApp should also check and validate React Native framework and make sure it hasn't been tinkered with. And in turn, React Native framework checks the DApp to make sure its hash matches that on the blockchain
 - DApp can call RT's CAR components features
+- Put in continuous integration and automated builds
+- Create npm package that developers can download to easily integrate elastos services(carrier, wallet and DID) onto their React Native app development

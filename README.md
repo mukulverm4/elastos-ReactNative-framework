@@ -29,7 +29,7 @@ There are 2 demo DApp files in `/dapp` folder.
 
 ## How to start contributing to the project
 * [Read process workflow](.doc/process_workflow.md)
-* Create a new github issue for every code change that is required - bug, feature, enhancement, etc
+* Create a new github issue for every code change that is required - bug, feature, enhancement, etc. Also use appropriate label and attach the milestone to go along with it
 * Create a new branch to work on the above github issue
 * Make your change and push to your branch and then submit a PR to be merged into master if everything looks right
 * Make a note of this commit on the github issue 
