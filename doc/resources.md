@@ -24,6 +24,7 @@
 
 ## Links to learn more about how to develop React Native plugins for Android + ios
 - https://medium.com/@httpdeveloper/how-to-build-a-simple-react-native-custom-module-for-ios-and-android-from-scratch-a8efd31446f0
+- https://stackoverflow.com/questions/18334547/how-to-use-the-same-c-code-for-android-and-ios
 - https://facebook.github.io/react-native/docs/native-modules-ios
 - https://github.com/jondot/awesome-react-native#frameworks
 - https://github.com/craftzdog/react-native-sqlite-2
