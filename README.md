@@ -1,9 +1,6 @@
 # Elastos-ReactNative-Framework
 Parallel to the Trinity Browser, this is the Elastos DApp framework implementation on React Native.
 
-## Prerequirements
-* Install node version > 8
-
 ## How to Set Up Environment
 ```shell
 $ npm i
