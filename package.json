@@ -48,5 +48,8 @@
   },
   "bin": {
     "bundle": "./bin/bundle"
+  },
+  "engines": {
+    "node": ">=9.11.1"
   }
 }
