@@ -401,6 +401,9 @@
 		39A8D5512150D64400819ED6 /* RCTStoreManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTStoreManager.m; sourceTree = "<group>"; };
 		39A8D59021517ED100819ED6 /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		39A8D59121517ED100819ED6 /* Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		39E70390216EBDCF00CD2A8E /* libelacarrier.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libelacarrier.dylib; path = ElastosCarrier.framework/Frameworks/libelacarrier.dylib; sourceTree = "<group>"; };
+		39E703B7216EBDCF00CD2A8E /* libcrystal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrystal.dylib; path = ElastosCarrier.framework/Frameworks/libcrystal.dylib; sourceTree = "<group>"; };
+		39E703B8216EBDCF00CD2A8E /* libelasession.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libelasession.dylib; path = ElastosCarrier.framework/Frameworks/libelasession.dylib; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		647D56E471FD4A3FAAB166C9 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		66242055C63446E4943C7865 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
@@ -602,6 +605,9 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39E703B7216EBDCF00CD2A8E /* libcrystal.dylib */,
+				39E70390216EBDCF00CD2A8E /* libelacarrier.dylib */,
+				39E703B8216EBDCF00CD2A8E /* libelasession.dylib */,
 				394123DF215B6F8C005D69C4 /* ElastosCarrier.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				DFDCF23F4179850D9C0B85F7 /* libPods-ELASTOS_RN_FRAMEWORK.a */,
@@ -1429,6 +1435,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"$(PROJECT_DIR)/ElastosCarrier.framework/Frameworks",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1470,6 +1477,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking\"",
+					"$(PROJECT_DIR)/ElastosCarrier.framework/Frameworks",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
