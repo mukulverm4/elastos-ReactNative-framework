@@ -4,9 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/libcrystal.dylib</key>
+		<data>
+		9O4euGQ3IF8heTi6grYOtDaXMmk=
+		</data>
+		<key>Frameworks/libelacarrier.dylib</key>
+		<data>
+		aKKhITtJ+wAlTSj6TcHZ/VV0EtU=
+		</data>
+		<key>Frameworks/libelasession.dylib</key>
+		<data>
+		IXLBnCrjtxfOmPZREw/tGuRXO/o=
+		</data>
 		<key>Headers/ElastosCarrier-Swift.h</key>
 		<data>
-		Cx8yafKch/wF9ksT3bnTBHyWxyQ=
+		XiRokReyzUIo+KBT6kRr851FW/M=
 		</data>
 		<key>Headers/ElastosCarrier.h</key>
 		<data>
@@ -14,15 +26,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		IUq8OqBnhtzd39PNCR5ztmAiv3E=
+		31rjb52A2Dj6BemUc7swiaxE+DI=
 		</data>
-		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftdoc</key>
+		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		DNL8ttlqPqwuqcfqjtW4+wzVwVk=
+		ov8cWcKeL0wTZsHWVtEcVMYAoeU=
 		</data>
-		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
+		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Yq+3x0PFF8Gz5vAFiSwiXAskgLI=
+		lvrCD4DOX13iRm6BG095Z4b1R+g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,15 +43,48 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/libcrystal.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9O4euGQ3IF8heTi6grYOtDaXMmk=
+			</data>
+			<key>hash2</key>
+			<data>
+			lfGUCdiLEsHkYH2cGb3ldAi2qA4JD34OiqEJFCLXYI8=
+			</data>
+		</dict>
+		<key>Frameworks/libelacarrier.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aKKhITtJ+wAlTSj6TcHZ/VV0EtU=
+			</data>
+			<key>hash2</key>
+			<data>
+			7KFTqvhFvzagUIAF94QspIJmnxeCihWLlQgKwdxiCz8=
+			</data>
+		</dict>
+		<key>Frameworks/libelasession.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IXLBnCrjtxfOmPZREw/tGuRXO/o=
+			</data>
+			<key>hash2</key>
+			<data>
+			Z1c8/Pe7KCXMtcx5k+JgCjuz2R8nhpVE7iZZuf9v5us=
+			</data>
+		</dict>
 		<key>Headers/ElastosCarrier-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Cx8yafKch/wF9ksT3bnTBHyWxyQ=
+			XiRokReyzUIo+KBT6kRr851FW/M=
 			</data>
 			<key>hash2</key>
 			<data>
-			g1SsbZzvthbjsb33k6BtSJ823qLqPa4/fuR91qmwdBM=
+			yHRxctyMmrUQz3uLq9mqzmFz7ZKQwZH/yu4G9XFH/tU=
 			</data>
 		</dict>
 		<key>Headers/ElastosCarrier.h</key>
@@ -53,26 +98,26 @@
 			C+ccjmGNEeJAzCqsj7S4G0w3GHLUEKRZZxFRSlwB5mw=
 			</data>
 		</dict>
-		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftdoc</key>
+		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DNL8ttlqPqwuqcfqjtW4+wzVwVk=
+			ov8cWcKeL0wTZsHWVtEcVMYAoeU=
 			</data>
 			<key>hash2</key>
 			<data>
-			YqxYcXE9d0r3uwu5FVTS8XXaJjz8dw9s0UiXd+3JNIg=
+			A+mrliWMGtUJkH5qxZ0zhoWfCyXbJ1Cbw5vO8rajPfw=
 			</data>
 		</dict>
-		<key>Modules/ElastosCarrier.swiftmodule/x86_64.swiftmodule</key>
+		<key>Modules/ElastosCarrier.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Yq+3x0PFF8Gz5vAFiSwiXAskgLI=
+			lvrCD4DOX13iRm6BG095Z4b1R+g=
 			</data>
 			<key>hash2</key>
 			<data>
-			AFHSsi4TPIdzVfQCAcYCKhA+QMs758i4c17TV6nnueM=
+			YjMxvsganjA8+S8w8vLXICRQ07O4R47fxjd8N+CpQP0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -89,7 +134,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -120,24 +165,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -173,13 +206,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>
