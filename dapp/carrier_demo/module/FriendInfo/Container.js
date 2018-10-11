@@ -17,6 +17,10 @@ export default util.createContainer(Component, (state, ownProps)=>{
 
     setTargetUser(userId){
       dm.dispatch(dm.action.message_target(userId));
+    },
+
+    async createSession(userId){
+      await dm.method.session.createSession(userId);
     }
   };
 });

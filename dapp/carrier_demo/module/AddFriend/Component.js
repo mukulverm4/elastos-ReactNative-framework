@@ -6,13 +6,23 @@ import {_, Style, Cache, plugin} from 'CR';
 import { Container, View, Content, Button, Text, Form, Item, Label, Input, Toast} from 'native-base';
 
 const sy = Style.create({
-  btn: {},
+  btn: {
+    marginTop:40
+  },
+  preview: {
+    width: 300,
+    height: 300
+  }
 });
 
 const RNCamera = plugin.RNCamera;
 const ScanPage = class extends ModalPage{
   ord_init(){
     this.camera = null;
+
+    this.state = {
+      code : null
+    };
   }
   ord_defineHeaderTitle(){
     return 'SCAN'
@@ -20,30 +30,37 @@ const ScanPage = class extends ModalPage{
   ord_renderMain(){
     const p = {
       ref : (ref)=>{this.camera = ref;},
-      style : {},
+      style : sy.preview,
       type : RNCamera.Constants.Type.back,
       flashMode : RNCamera.Constants.FlashMode.auto,
       permissionDialogTitle : 'Permission to use camera',
       permissionDialogMessage : 'We need your permission to use your camera phone',
-      onBarCodeRead : (barcode)=>{
-        console.log(111, barcode);
+      onBarCodeRead : async (barcode)=>{
+        // console.log(111, barcode);
+        if(barcode && barcode.data){
+          this.setState({code : barcode.data});
+          
+        }
       },
       barCodeTypes : [RNCamera.Constants.BarCodeType.qr]
     };
     return (
       <Container>
-        <RNCamera {...p} />
-        {/* <View style={{paddingLeft:15, paddingRight:15, marginTop:40}}>
+        <View style={{paddingLeft:15, paddingRight:15, paddingTop:24, alignItems: 'center'}}>
+          {this.state.code ? (<Text>{this.state.code}</Text>) : (<RNCamera {...p} />)}
           <Button style={sy.btn} success block onPress={this.scan.bind(this)}>
             <Text>Confirm</Text>
           </Button>
-        </View> */}
+        </View>
       </Container>
     );
   }
 
   async scan(){
-
+    if(this.state.code){
+      this.props.setCode(this.state.code);
+      this.close();
+    }
   }
 };
 
@@ -119,12 +136,13 @@ export default class extends Parent{
 
     try{
       await this.props.addFriend(this.param.address, this.param.message);
-      this.setState({loading : false});
+      
       Toast.show({
         text : 'send request success',
         type : 'success'
       });
       this.param = {};
+      this.setState({loading : false});
     }catch(e){
       Toast.show({
         text : e,
@@ -137,20 +155,26 @@ export default class extends Parent{
   }
 
   ord_defineHeaderTitle(){
-    return 'EDIT PROFILE';
+    return 'ADD FRIEND';
   }
 
   ord_renderHeaderRight(){
     return (
       <Button key="1" transparent onPress={this.openScanView.bind(this)}>
-        {/* <Text style={{color:'#fff'}}>SCAN</Text> */}
+        <Text style={{color:'#fff'}}>SCAN</Text>
       </Button>
     );
   }
 
   openScanView(){
     Cache.method.call('modal', 'open', {
-      child : ScanPage
+      child : ScanPage,
+      prop : {
+        setCode : (code)=>{
+          this.param.address = code;
+          this.forceUpdate();
+        }
+      }
     });
   }
 
