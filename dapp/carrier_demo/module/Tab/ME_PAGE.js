@@ -84,7 +84,7 @@ const Page = class extends BasePage{
     return (
       <Button transparent onPress={this.toEditPage.bind(this)}>
         {/* <Icon type="FontAwesome" name='edit' /> */}
-        <Text>EDIT</Text>
+        <Text style={{color:'#fff'}}>EDIT</Text>
       </Button>
     );
   }

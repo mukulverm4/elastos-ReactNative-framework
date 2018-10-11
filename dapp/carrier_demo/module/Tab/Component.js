@@ -2,34 +2,49 @@ import React from 'react';
 import BasePage from 'app/module/common/BasePage';
 import {_, Style, Cache} from 'CR';
 
-import { Container, Content, View, Tab, Tabs, List, ListItem, Text, Badge} from 'native-base';
+import { Container, Content, View, Tab, Tabs, List, ListItem, Text, Badge, Footer} from 'native-base';
 
 import ME_PAGE from './ME_PAGE';
 import FRIEND_LIST_PAGE from './FRIEND_LIST_PAGE';
 import CHAT_LIST_PAGE from './CHAT_LIST_PAGE';
 
 const sy = Style.create({
-
+  tab_style: {
+    backgroundColor: '#eee',
+    borderTopColor: '#dfdfdf',
+    borderTopWidth: 1
+  },
+  active_tab_style: {
+    borderTopColor: '#dfdfdf',
+    borderTopWidth: 1
+  },
+  tab_border : {
+    borderLeftColor: '#dfdfdf',
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderRightColor: '#dfdfdf'
+  }
 });
 
 export default class extends BasePage{
   ord_renderMain(){
     const p = {
-      navigation : this.props.navigation
+      navigation : this.props.navigation,
     };
     return (
       <Container>
         <Tabs tabBarPosition="bottom">
-          <Tab heading={this.getChatHeader()}>
+          <Tab tabStyle={sy.tab_style} activeTabStyle={sy.active_tab_style} heading={this.getChatHeader()}>
             <CHAT_LIST_PAGE {...p} />
           </Tab>
-          <Tab heading="FRIENDS">
+          <Tab tabStyle={[sy.tab_style, sy.tab_border]} activeTabStyle={[sy.active_tab_style, sy.tab_border]} heading="FRIENDS">
             <FRIEND_LIST_PAGE {...p} />
           </Tab>
-          <Tab heading="ME">
+          <Tab tabStyle={sy.tab_style} activeTabStyle={sy.active_tab_style} heading="ME">
             <ME_PAGE {...p} />
           </Tab>
         </Tabs>
+        
       </Container>
     );
   }
