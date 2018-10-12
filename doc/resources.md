@@ -17,10 +17,14 @@
 - https://github.com/elastos/Elastos.RT/blob/master/Docs/How_To_Use_The_Wallet_Of_Elastos.RT_CN.md: How to Use the Wallet SDK for Android Platform
 
 ## Elastos ID SDK
+- https://github.com/elastos/Elastos.ELA.SPV.Cpp.ID/tree/dev: SDK for DID.
 - https://github.com/elastos/Elastos.RT.SDK.DID.Checker.Android: SDK for DID Checker
 
 ## Elastos Runtime SDK(Where all the C++ implementations of services are located: wallet, DID, carrier, etc)
 - https://github.com/elastos/Elastos.RT/tree/master/Sources/Elastos
+
+## Elastos Trinity Browser
+- https://github.com/elastos/Elastos.ORG.Wallet.Mobile/tree/ds: Include android cordova plugin for wallet, DID and carrier. good reference for RN plugin development.
 
 ## Links to learn more about how to develop React Native plugins for Android + ios
 - https://medium.com/@httpdeveloper/how-to-build-a-simple-react-native-custom-module-for-ios-and-android-from-scratch-a8efd31446f0

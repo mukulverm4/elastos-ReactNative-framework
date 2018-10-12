@@ -293,6 +293,14 @@ RCT_EXPORT_METHOD
   }
 }
 
+RCT_EXPORT_METHOD
+(createSession: (NSString *)cid :(NSString *)friendId :(RCTResponseSenderBlock)callback){
+  Carrier *carrier = [self getCarrier:cid];
+  [carrier createNewSession:cid friendId:friendId];
+  
+  callback(@[NULL_ERR, OK]);
+}
+
 -(CarrierSendEvent) carrierCallback : (NSDictionary *)config{
   __weak __typeof(self) weakSelf = self;
   CarrierSendEvent sendEvent = ^(ELACarrier *carrier, NSDictionary* param){

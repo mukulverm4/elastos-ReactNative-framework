@@ -2,7 +2,7 @@ import React from 'react';
 import StackPage from 'app/module/common/StackPage';
 import {_, Style, Cache} from 'CR';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-
+// import {TextInput} from 'react-native';
 import { Container, View, Content, Button, Text, Form, Item, Label, Input, Row, Col, Icon, Toast} from 'native-base';
 
 const sy = Style.create({
@@ -73,6 +73,9 @@ export default class extends StackPage{
       loading : false,
       text : ''
     };
+
+    this.tmp = this.state.text;
+
   }
 
   ord_checkLoading(){
@@ -131,9 +134,15 @@ export default class extends StackPage{
       returnKeyType : 'send',
       // blurOnSubmit : true,
       value : this.state.text,
+      // ref : (ref)=>{this.text = ref;},
       onSubmitEditing : async ()=>{
+        
         try{
-          await this.props.sendText(info.userId, this.state.text);
+          const text = this.tmp;
+          this.setState({text});
+          await this.props.sendText(info.userId, text);
+          this.tmp = '';
+          this.setState({text : ''});
 
         }catch(e){
           Toast.show({
@@ -141,12 +150,11 @@ export default class extends StackPage{
             type : 'danger'
           });
         }
-        
-        this.setState({text : ''});
       },
-      onChangeText : (text)=>{
+      onChangeText : (value)=>{
         // this.state.text = text;
-        this.setState({text});
+        // value = value.replace(/[^\d/a-zA-Z]/g,'');
+        this.tmp = value;
       }
     };
     return (

@@ -1,10 +1,10 @@
-
 import {plugin} from 'CR';
-const Carrier = plugin.Carrier;
 import me from './me';
 import friends from './friends';
 import messgae from './message';
+import session from './session';
 
+const Carrier = plugin.Carrier;
 let _carrier = null;
 const F = {
   buildCallback(dm){
@@ -114,6 +114,7 @@ export default (dm)=>{
 
     me : me(dm),
     friends : friends(dm),
-    message : messgae(dm)
+    message : messgae(dm),
+    session : session(dm)
   };
 };
